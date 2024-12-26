@@ -28,9 +28,9 @@ content="width=device-width, initial-scale=1.0"
 <h2>
 <a href="#getting-started">Getting Started</a>
 </h2>
-<p>To get your very first placeholder tutorial up online, you’re going
-to need to take 12 steps. I’ll list them here quickly, and then deal
-with each step in detail, one by one.</p>
+<p>To get your very first demo tutorial up online, you’re going to need
+to take 10 simple steps. I’ll list them here quickly, and then deal with
+each step in detail, one by one.</p>
 <ol type="1">
 <li>Create your own GitHub Organization.</li>
 <li>Fork the <a
@@ -38,19 +38,26 @@ href="https://github.com/HTM-Elves/HTM-Elves.github.io">HTM-Elves
 repository</a> into your new Organization.</li>
 <li>Use GitHub Pages to publish your new fork</li>
 <li>Clone your fork to your local computer</li>
-<li>Install Pandoc and Watchman</li>
-<li>Run <code>npm run new</code></li>
-<li>Provide a name for your first tutorial repository</li>
-<li>Create a new GitHub repository inside your new Organization for your
-first tutorial</li>
+<li>Install Pandoc and Watchman locally</li>
+<li>Use HTM-Elves to generate a Demo tutorial automatically</li>
+<li>Create a new GitHub repository inside your new Organization for this
+demo tutorial</li>
 <li>Set the <code>origin</code> for your new local repository to the URL
 of your new GitHub repository</li>
 <li>Push your local repository to GitHub</li>
-<li>Use GitHub Pages to publish this new repository</li>
-<li>Somewhere between steps 8 and 10, you might want to write some
-tutorial content of your own, but that’s optional, if you just want to
-understand how the process works.</li>
+<li>Use GitHub Pages to publish this new tutorial repository for the
+world to see.</li>
 </ol>
+<details class="tip" open>
+<summary>
+Going with the Flow
+</summary>
+<p>You won’t actually have to write a tutorial of your own at this
+stage. You’ll just be learning the workflow. A second tutorial will
+provide you with tips and tricks for <a
+href="https://htm-elves.github.io/Writing-Your-Own-Tutorials/">Writing
+Your Own Tutorials</a>.</p>
+</details>
 <details class="pivot" open>
 <summary>
 Step by Step
@@ -173,23 +180,19 @@ your Organization.</p>
 <a href="#publish-your-fork">Publish Your Fork on GitHub</a>
 </h2>
 <p>At the end of the previous step, your should find yourself on the
-home page of your newly-forked repository. Notice that there is a
-directory called <code>docs</code>.</p>
+home page of your newly-forked repository. Notice that there is a file
+called <code>index.html</code>.</p>
 <figure>
-<img src="images/docs.webp" alt="The docs directory" />
-<figcaption aria-hidden="true">The docs directory</figcaption>
-</figure>
-<p>Inside the <code>docs/</code> directory is a file called
-<code>index.html</code>.</p>
-<figure>
-<img src="images/docs_index.webp" alt="The index.html file" />
+<img src="images/index.webp" alt="The index.html file" />
 <figcaption aria-hidden="true">The index.html file</figcaption>
 </figure>
 <p>When you use GitHub Pages to publish your newly-forked repository, it
 is this <code>index.html</code> file which will be used to create the
-home page. In the same <code>docs/</code> directory, there is an
-<code>assets/</code> directory which contains a script and a CSS file
-that will be used to customize the <code>index.html</code> page.</p>
+home page. The repository also contains a <code>private/</code>
+directory which contains a script, a CSS file and a JSON file that will
+be used to customize the <code>index.html</code> page.</p>
+<p>The <code>public/</code> directory contains files that can be used by
+future repositories that you will create for your tutorials.</p>
 <p>To publish the repository:</p>
 <ol type="1">
 <li>Click on the Settings tab at the top right of the page. (You may
@@ -197,8 +200,8 @@ have to click on a <code>...</code> button if the page is too narrow to
 show all the tabs.)</li>
 <li>In the menu column on the left, click on the Pages link</li>
 <li>In the Build and Deployment section, make sure that the
-<code>main</code> branch is selected, and choose the <code>/docs</code>
-directory as the source.</li>
+<code>main</code> branch is selected, and choose the
+<code>/(root)</code> directory as the source.</li>
 <li>Click on Save</li>
 </ol>
 <figure>
@@ -210,33 +213,242 @@ minutes before the new page is ready. You should find it at
 <code>https://MyTutorials.github.io</code> (where you replace
 <code>MyTutorials</code> with the actual name of your new
 Organization).</p>
+<p>The home page of your new Organization should look something like
+this:</p>
+<figure>
+<img src="images/Welcome.webp" alt="Welcome to MyTutorials" />
+<figcaption aria-hidden="true">Welcome to MyTutorials</figcaption>
+</figure>
 <details class="pivot" open>
 <summary>
-Summary
+Placeholder Tutorials
 </summary>
+<p>The default home page is just a placeholder. It provides some dummy
+links to tutorials that you haven’t written yet. They will highlight as
+you roll your mouse over them, but they will not take you anywhere. You
+will see later how you can customize this page.</p>
+<p>For now, this page’s existence proves two things:</p>
+<ul>
+<li>You succeeded in using GitHub Pages to publish a home page for your
+new organization</li>
+<li>The files in the <code>public/</code> folder are accessible to the
+Organization as a whole. The icons beside each dummy tutorial link are
+stored inside the <code>public/</code> folder, and the
+<code>index.html</code> file in at the root of your repository is able
+to show them.</li>
+</ul>
+<p>In the next steps , you’ll see how to create a Demo tutorial and
+publish it to your new Organization.</p>
 </details>
 </section>
-<!-- Clone Your Fork -->
 <section id="clone-your-fork" aria-labelledby="clone-your-fork" data-item="Clone Your Fork">
 <h2>
 <a href="#clone-your-fork">Clone Your Fork to your Development
 Computer</a>
 </h2>
+<p>For now, everything you have done has been on the GitHub site. Now
+it’s time to make a clone of your <code>MyTutorial.github.io</code>
+repository on your local computer. This will allow you to generate a
+demo tutorial and publish it.</p>
+<p>To clone your forked repository to your development computer:</p>
+<ol type="1">
+<li><p>On the home page of your new repository, click on the green Code
+button and copy the link to the repository. <img
+src="images/CloneFork.webp" alt="Clone your Fork" /></p></li>
+<li><p>On the desktop of your computer, create a new folder which you
+will use to hold all the repositories for your tutorials Organization.
+I’ll simply call mine <code>MyTutorials</code>, like the name of my
+Organization.</p></li>
+<li><p>Open this new folder with VS Code, and open a new Terminal, type
+<code>git clone</code> and then paste the link you have just
+copied.</p></li>
+<li><p>Press the Enter key <img src="images/LocalClone.webp"
+alt="Clone Locally" /></p></li>
+</ol>
+<h3 id="whats-in-the-repository">What’s in the Repository</h3>
+<p>To explore the contents of your repository you can 1. Type
+<code>code -r M</code> then press the Tab key. (If your repository is
+not called <code>MyTutorials</code>, just type the first letter of your
+repository name instead of the <code>M</code>). Pressing the Tab key
+will make the Terminal autocomplete the name of the folder that has just
+been created. 2. Press Enter 3. In VS Code’s Explorer open up all the
+subfolders, so you can see their contents. I’ll explain these in due
+course. 4. Click on <code>package.json</code></p>
+<figure>
+<img src="images/packege-json.webp" alt="package.json" />
+<figcaption aria-hidden="true">package.json</figcaption>
+</figure>
 <details class="pivot" open>
 <summary>
-Summary
+Scripts and Dependencise
 </summary>
+<p>The <code>package.json</code> file acts as the command centre for the
+repository. It has two sections which will make the whole workflow
+work:</p>
+<ul>
+<li><code>"scripts"</code> provides two commands that you can use to
+generate a tutorial Template</li>
+<li><code>"devDependencies"</code> defines the node modules that will
+make all the magic happen.</li>
+</ul>
+<p>In the next step, you will be installing these dependencies, as well
+as the services that they rely on.</p>
 </details>
 </section>
-<!-- A Boilerplate Tutorial -->
-<section id="a-boilerplate-tutorial" aria-labelledby="a-boilerplate-tutorial" data-item="A Boilerplate Tutorial">
+<section id="install-pandoc-and-watchman" aria-labelledby="install-pandoc-and-watchman" data-item="Install Pandoc &amp; Watchman">
 <h2>
-<a href="#a-boilerplate-tutorial">A Boilerplate Tutorial</a>
+<a href="#install-pandoc-and-watchman">Install Pandoc and Watchman</a>
 </h2>
+<p>The HTM-Elves workflow relies on Pandoc, a free open-source software
+document converter. It can convert between any of about 60 document
+formats, including Markdown and HTML (which is the focus here), but also
+PDF, DOCX, PowerPoint, EPUB and many others that you may one day
+encounter.</p>
+<p>Pandoc is designed to be run from the Command Line, but HTM-Elves
+takes care of all the details for you,</p>
+<details class="warn" open>
+<summary>
+Install Pandoc
+</summary>
+<p>You must [install Pandoc] on your development computer before
+continuing. Without Pandoc, there will be no magic.</p>
+<p><strong>Follow the <a
+href="https://pandoc.org/installing.html">installation instructions
+here</a>.</strong></p>
+</details>
+<p>To work most efficiently, it is good to see your Markdown files
+converted to HTML files and displayed in your browser in real time. For
+this, you can install <a
+href="https://facebook.github.io/watchman/">Meta’s open source Watchman
+service</a>.</p>
+<details class="warn" open>
+<summary>
+Install Watchman?
+</summary>
+<p>It’s possible that Watchman has already been installed on your system
+by another development tool that you use. To check, run this command in
+a Terminal window:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">watchman</span> <span class="at">--version</span></span></code></pre></div>
+<p>If you see a response like <code>command not found: watchman</code>,
+then you will need to <a
+href="https://facebook.github.io/watchman/docs/install">install
+Watchman</a> yourself. If you see a version number, like
+<code>2024.11.04.00</code>, you’re already set.</p>
+</details>
+<p>When you have installed these two services, you can install the Node
+modules that the HTM-Elves project will use to control them.</p>
+<details class="warn" open>
+<summary>
+Installing Node Modules
+</summary>
+<p><strong>In a Terminal window open on your
+<code>MyTutorials.github.io</code> folder, run the command:</strong></p>
+<pre class="bash-#w"><code>npm i</code></pre>
+<p>This will tell <code>npm</code> to install all the
+<code>devDependencies</code> listed in <code>package.json</code>.</p>
+</details>
+<details class="pivot" open>
+<summary>
+Ready to Generate a Demo Tutorial
+</summary>
+<p>If you have succeeded in installing Pandoc, Watchman and the required
+Node modules correctly, the fun is about to begin.</p>
+</details>
+</section>
+<section id="a-demo-tutorial" aria-labelledby="a-demo-tutorial" data-item="A Demo Tutorial">
+<h2>
+<a href="#a-demo-tutorial">A Demo Tutorial</a>
+</h2>
+<p>As you saw earlier, the <code>package.json</code> file contains a
+script called <code>"demo"</code>. It’s time to test it.</p>
+<ol type="1">
+<li><p>In the Terminal window that you have open on your
+<code>MyTutorials.github.io</code> folder, run the command:</p>
+<pre class="bash-#w"><code>npm run demo</code></pre></li>
+</ol>
+<p>If everything is properly installed, your browser should open showing
+a ready-made four-part tutorial. The content is a condensed version of
+this tutorial, without all the details.</p>
+<figure>
+<img src="images/RunDemo.webp" alt="npm run demo" />
+<figcaption aria-hidden="true">npm run demo</figcaption>
+</figure>
+<p>Just like this tutorial that you are reading now, this demo tutorial
+has the following features:</p>
+<ul>
+<li>A menu on the left which collapses to a hamburger if the viewport is
+not wide enough to show both the menu and the content.</li>
+<li>A toggle button at the top of the menu that allows you to choose
+between showing the tutorial as a single page, or split into
+sections.</li>
+<li>Two links at the foot of the menu (which don’t work yet, because you
+haven’t created the associated GitHub repository)</li>
+<li>A footer at the end of each section which allows you to navigate to
+the next section</li>
+<li>Coloured collapsible blocks with information that you can skip over
+if you are in a hurry.</li>
+<li>The month in which the tutorial was created in the top right
+corner.</li>
+<li>Numbered and bullet lists, headers and other formatting.</li>
+</ul>
+<h3 id="a-separate-repository">A Separate Repository</h3>
+<p>The Demo tutorial has been created in a folder inside the parent
+folder shared with your <code>MyTutorials.github.io</code> folder. The
+subfolder <code>docs/md/</code> contains a number of Markdown files with
+the <code>.md</code> extension.</p>
+<p>The Demo folder also contains its own <code>package.json</code> file,
+which has its own <code>"scripts"</code>:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;scripts&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;pandoc&quot;</span><span class="fu">:</span> <span class="st">&quot;pandoc -o docs/index.html --template=public/template.html docs/md/*.md&quot;</span><span class="fu">,</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;watch&quot;</span><span class="fu">:</span> <span class="st">&quot;node public/watch.js Demo&quot;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<p>The <code>"pandoc"</code> script runs the Markdown-to-HTML conversion
+progress. As you’ll see shortly, the <code>"watch"</code> can be used to
+run the <code>"pandoc"</code> script every time a Markdown file
+changes.</p>
+<h3 id="conversion-on-command">Conversion on Command</h3>
+<p>The <code>npm run demo</code> command that you typed first created
+all these files, and then triggered the <code>"pandoc"</code> command in
+the new <code>package.json</code> file. As a result, the file at
+<code>docs/index.html</code> was created automatically. It is this
+<code>index.html</code> file which is now showing in your browser.</p>
+<figure>
+<img src="images/docs_md.webp" alt="The docs/md/ folder" />
+<figcaption aria-hidden="true">The <code>docs/md/</code>
+folder</figcaption>
+</figure>
+<details class="note" open>
+<summary>
+Markdown File Numbering System
+</summary>
+<p>The Markdown files are numbered with zero-padded numbers, to make
+sure that they are treated in the correct order. However,
+counter-intuitively, the very first file
+(<code>99-Introduction.md</code>) has the <em>highest</em> number. This
+is because of the way the page sections need to be handled by CSS. This
+issue is dealt with in more detail in the tutorial <a
+href="https://htm-elves.github.io/Writing-Your-Own-Tutorials/">Writing
+Your Own Tutorials</a>.</p>
+</details>
+<h3 id="reading-from-the-public-folder">Reading from the
+<code>public/</code> folder</h3>
+<p>The <code>index.html</code> file contains links to files inside the
+folder at <code>MyTutorial.github.io/public/</code>. Specifically, it
+reads in a number JavaScript files, CSS files, and some SVG icons.</p>
 <details class="pivot" open>
 <summary>
 Summary
 </summary>
+<p>The <code>npm run demo</code> command also initialized a Git
+repository inside the Demo folder, and made a first
+<code>commit</code>.</p>
+<p>In the next step, you will push this repository to your Tutorials
+Organization, so that you can publish the <code>index.html</code> file
+with GitHub Pages.</p>
 </details>
 </section>
 <!-- Tutorial Repository on Github -->

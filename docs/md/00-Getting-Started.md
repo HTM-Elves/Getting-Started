@@ -5,20 +5,27 @@ data-item="Getting Started"
 >
 <h2><a href="#getting-started">Getting Started</a></h2>
 
-To get your very first placeholder tutorial up online, you're going to need to take 12 steps. I'll list them here quickly, and then deal with each step in detail, one by one.
+To get your very first demo tutorial up online, you're going to need to take 10 simple steps. I'll list them here quickly, and then deal with each step in detail, one by one.
 
 1. Create your own GitHub Organization.
 2. Fork the [HTM-Elves repository](https://github.com/HTM-Elves/HTM-Elves.github.io) into your new Organization.
 3. Use GitHub Pages to publish your new fork
 4. Clone your fork to your local computer
-5. Install Pandoc and Watchman
-6. Run `npm run new`
-7. Provide a name for your first tutorial repository
-8. Create a new GitHub repository inside your new Organization for your first tutorial
-9. Set the `origin` for your new local repository to the URL of your new GitHub repository
-10. Push your local repository to GitHub
-11. Use GitHub Pages to publish this new repository
-12. Somewhere between steps 8 and 10, you might want to write some tutorial content of your own, but that's optional, if you just want to understand how the process works.
+5. Install Pandoc and Watchman locally
+6. Use HTM-Elves to generate a Demo tutorial automatically
+7. Create a new GitHub repository inside your new Organization for this demo tutorial
+8. Set the `origin` for your new local repository to the URL of your new GitHub repository
+9.  Push your local repository to GitHub
+10. Use GitHub Pages to publish this new tutorial repository for the world to see.
+
+<details
+class="tip"
+open
+>
+<summary>Going with the Flow</summary>
+You won't actually have to write a tutorial of your own at this stage. You'll just be learning the workflow. A second tutorial will provide you with tips and tricks for [Writing Your Own Tutorials](https://htm-elves.github.io/Writing-Your-Own-Tutorials/).
+
+</details>
 
 <details
   class="pivot"
