@@ -7,13 +7,13 @@ name="viewport"
 content="width=device-width, initial-scale=1.0"
 >
 <title>Getting Started with HTM-Elves</title>
-<link rel="stylesheet" href="../shared/styles.css">
-<link rel="stylesheet" href="../shared/media-queries.css">
-<link rel="stylesheet" href="../shared/prism/prism.css">
+<link rel="stylesheet" href="../public/styles.css">
+<link rel="stylesheet" href="../public/media-queries.css">
+<link rel="stylesheet" href="../public/prism/prism.css">
 
-<script defer src="../shared/prism/prism.js"></script>
-<script defer src="../shared/storage.js"></script>
-<script defer src="../shared/script.js"></script>
+<script defer src="../public/prism/prism.js"></script>
+<script defer src="../public/storage.js"></script>
+<script defer src="../public/script.js"></script>
 </head>
 
 <body>
@@ -108,33 +108,108 @@ tutorials.</p>
 <h2>
 <a href="#fork-htm-elves">Fork HTM-Elves to your New Organization</a>
 </h2>
-<p>The <a href="https://HTM-Elves.github.io">HTM-Elves.github.io
+<p>The <a
+href="https://github.com/orgs/HTM-Elves/repositories">HTM-Elves.github.io
 repository</a> contains all the tools that you will need both on GitHub
 and on your local development computer.</p>
 <p>On GitHub, it will provide the CSS, JavaScript and icon files that
-will be shared by all your online tutorials. On your development
+will be public by all your online tutorials. On your development
 computer, it will provide scripts to automate your tutorial creation
 process.</p>
 <p>First, you’ll need to create a <em>fork</em> of <a
 href="https://HTM-Elves.github.io">HTM-Elves.github.io repository</a> in
 your new GitHub Organization.</p>
-<p>To create your own fork:</p>
+<details class="note" open>
+<summary>
+Forks and Clones
+</summary>
+<p>When you clone a GitHub repository, you create an identical copy of
+the files on your local computer. When you <em>fork</em> a GitHub
+repository, you create an identical copy of the files <em>in a different
+account on GitHub</em>. If you are the owner of the account, then you
+have full control of your newly forked repository.</p>
+<p>To work with your forked repository, you will still need to clone it
+to your development computer, just as you are used to doing.</p>
+</details>
+<p>To create your own fork of <code>HTM-Elves.github.io</code>:</p>
 <ol type="1">
-<li>Visit <a href="https://github.com/orgs/HTM-Elves/repositories">the
-HTM-Elves repositories page</a></li>
-<li></li>
+<li>Visit <a href="https://github.com/HTM-Elves/HTM-Elves.github.io">the
+HTM-Elves.github.io repository page</a></li>
+<li>Find the Fork button, click on the contextual menu button, and
+select Create A New Fork <img src="images/CreateFork.webp"
+alt="Create a New Fork" /></li>
+<li>A new page will open.
+<ul>
+<li>From the Owner contextual menu, choose the name of the Organization
+that you have just created.</li>
+<li>In the Repository Name field, enter the exact name of the
+Organization that you have just created, followed by
+<code>.github.io</code>. For example, if you created an Organization
+called “MyTutorials”, then the repository name <strong>must</strong> be
+“MyTutorials.github.io” (case is not important). This tells GitHub to
+use this repository to create <a
+href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites">the
+home page for your Organization</a>. If the following steps fail to work
+for you, check that you have named your repository correctly. <img
+src="images/NewFork.webp"
+alt="Select Owner and Set Name of Fork" /></li>
+</ul></li>
 </ol>
 <details class="pivot" open>
 <summary>
-Summary
+A Fork with Two Roles
 </summary>
+<p>You can now use <a
+href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">GitHub
+Pages</a> to generate an online page for your tutorials Organization
+from your forked repository. You can also clone the repository to your
+development computer, and use it to generate tutorial repositories for
+your Organization.</p>
+<p>These roles will be treated in the next sections.</p>
 </details>
 </section>
-<!-- Publish Your Fork -->
 <section id="publish-your-fork" aria-labelledby="publish-your-fork" data-item="Publish Your Fork">
 <h2>
 <a href="#publish-your-fork">Publish Your Fork on GitHub</a>
 </h2>
+<p>At the end of the previous step, your should find yourself on the
+home page of your newly-forked repository. Notice that there is a
+directory called <code>docs</code>.</p>
+<figure>
+<img src="images/docs.webp" alt="The docs directory" />
+<figcaption aria-hidden="true">The docs directory</figcaption>
+</figure>
+<p>Inside the <code>docs/</code> directory is a file called
+<code>index.html</code>.</p>
+<figure>
+<img src="images/docs_index.webp" alt="The index.html file" />
+<figcaption aria-hidden="true">The index.html file</figcaption>
+</figure>
+<p>When you use GitHub Pages to publish your newly-forked repository, it
+is this <code>index.html</code> file which will be used to create the
+home page. In the same <code>docs/</code> directory, there is an
+<code>assets/</code> directory which contains a script and a CSS file
+that will be used to customize the <code>index.html</code> page.</p>
+<p>To publish the repository:</p>
+<ol type="1">
+<li>Click on the Settings tab at the top right of the page. (You may
+have to click on a <code>...</code> button if the page is too narrow to
+show all the tabs.)</li>
+<li>In the menu column on the left, click on the Pages link</li>
+<li>In the Build and Deployment section, make sure that the
+<code>main</code> branch is selected, and choose the <code>/docs</code>
+directory as the source.</li>
+<li>Click on Save</li>
+</ol>
+<figure>
+<img src="images/GitHubPages.webp" alt="Publish with GitHub Pages" />
+<figcaption aria-hidden="true">Publish with GitHub Pages</figcaption>
+</figure>
+<p>GitHub will queue your publish request, so you may have to wait a few
+minutes before the new page is ready. You should find it at
+<code>https://MyTutorials.github.io</code> (where you replace
+<code>MyTutorials</code> with the actual name of your new
+Organization).</p>
 <details class="pivot" open>
 <summary>
 Summary
@@ -240,7 +315,7 @@ class="open"
 <label
 title="Split into sections"
 >
-<img src="../shared/svg/pages.svg" alt="pages">
+<img src="../public/svg/pages.svg" alt="pages">
 <input
 type="radio"
 name="paging"
@@ -251,7 +326,7 @@ checked
 <label
 title="Show as a single page"
 >
-<img src="../shared/svg/scroll.svg" alt="scroll">
+<img src="../public/svg/scroll.svg" alt="scroll">
 <input
 type="radio"
 name="paging"
@@ -300,16 +375,16 @@ y2="80"
 
 <div id="repo">
 <a
-href="https://github.com/MERNCraft/Getting-Started/issues/new"
+href="https://github.com/HTM-Elves/Getting-Started/issues/new"
 >
 Feedback
 </a>
 
 <a
 class="repo"
-href="https://github.com/MERNCraft/Getting-Started"
+href="https://github.com/HTM-Elves/Getting-Started"
 >
-<img src="../shared/svg/github.svg" alt="github logo">
+<img src="../public/svg/github.svg" alt="github logo">
 <span>GitHub repository</span>
 </a>
 </div>

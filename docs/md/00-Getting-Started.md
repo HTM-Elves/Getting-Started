@@ -1,9 +1,9 @@
 <section
-  id="getting-started"
-  aria-labelledby="getting-started"
-  data-item="Getting Started"
+id="getting-started"
+aria-labelledby="getting-started"
+data-item="Getting Started"
 >
-  <h2><a href="#getting-started">Getting Started</a></h2>
+<h2><a href="#getting-started">Getting Started</a></h2>
 
 To get your very first placeholder tutorial up online, you're going to need to take 12 steps. I'll list them here quickly, and then deal with each step in detail, one by one.
 
