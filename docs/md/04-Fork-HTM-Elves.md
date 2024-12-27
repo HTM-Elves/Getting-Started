@@ -1,7 +1,7 @@
 <section
 id="fork-htm-elves"
 aria-labelledby="fork-htm-elves"
-data-item="Fork HTM-Elves"
+data-item="4. Fork HTM-Elves"
 >
 <h2><a href="#fork-htm-elves">Fork HTM-Elves to your New Organization</a></h2>
 
@@ -26,12 +26,15 @@ To create your own fork of `HTM-Elves.github.io`:
 
 1. Visit [the HTM-Elves.github.io repository page](https://github.com/HTM-Elves/HTM-Elves.github.io)
 2. Find the Fork button, click on the contextual menu button, and select Create A New Fork
-![Create a New Fork](images/CreateFork.webp)
+
+![Create a new fork](images/CreateFork.webp)
+
 1. A new page will open.
    * From the Owner contextual menu, choose the name of the Organization that you have just created.
    * In the Repository Name field, enter the exact name of the Organization that you have just created, followed by `.github.io`.
    For example, if you created an Organization called "MyTutorials", then the repository name **must** be "MyTutorials.github.io" (case is not important). This tells GitHub to use this repository to create [the home page for your Organization](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites). If the following steps fail to work for you, check that you have named your repository correctly.
-![Select Owner and Set Name of Fork](images/NewFork.webp)
+
+![Select the owner organization and set the name of the fork repository](images/NewFork.webp)
 
 <details
 class="pivot"

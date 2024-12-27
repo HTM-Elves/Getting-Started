@@ -8,7 +8,7 @@ repo: Getting-Started
 <section
 id="introduction"
 aria-labelledby="introduction"
-data-item="Introduction"
+data-item="1. Introduction"
 >
 <h2><a href="#introduction">Introduction</a></h2>
 

@@ -1,7 +1,7 @@
 <section
 id="getting-started"
 aria-labelledby="getting-started"
-data-item="Getting Started"
+data-item="2. Getting Started"
 >
 <h2><a href="#getting-started">Getting Started</a></h2>
 

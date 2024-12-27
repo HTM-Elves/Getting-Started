@@ -1,7 +1,7 @@
 <section
   id="create-your-organization"
   aria-labelledby="create-your-organization"
-  data-item="Create Your Organization"
+  data-item="3. Create Your Organization"
 >
   <h2><a href="#create-your-organization">Create Your Own Organization</a></h2>
 
@@ -12,18 +12,25 @@ To create a GitHub Organization:
 1. Log in to [GitHub](https://github.com/)
 2. Click on your Profile icon in the top right corner
 3. In the drop-down menu that opens, select [Your Organazations](https://github.com/settings/organizations)
-![Your Organizations](images/YourOrganizations.webp)
-1. Find the New Organization button at the top of the list of organizations that you belong to, and click on it.
-![New Organization](images/NewOrganization.webp)
+   
+![Select your organizations](images/YourOrganizations.webp)
 
-1. On the next page, choose the Free plan
-![Free Organization](images/FreeOrganization.webp)
+4. Find the New Organization button at the top of the list of organizations that you belong to, and click on it.
+   
+![Create a new organization](images/NewOrganization.webp)
 
-1. You'll get a form to fill in. Unless you really want to pay for it, be sure to deselect the GitHub CoPilot checkbox.
-![Set Up Organization](images/SetUpOrganization.webp)
+5. On the next page, choose the Free plan
+
+![Choose the free plan](images/FreeOrganization.webp)
+
+6. You'll get a form to fill in. Unless you really want to pay for it, be sure to deselect the GitHub CoPilot checkbox.
+
+![A form to fill in](images/SetUpOrganization.webp)
+
 1. When you have given all the necessary details and accepted the terms of service, you'll be able to click on the green Next button
 2. The next page allows you to invite other GitHub members to join your Organization. If you don't add any names the Complete Setup button makes you skip ahead to the home page of your new Organization. 
-![Skip Step](images/SkipStep.webp)
+   
+![You can skip this step](images/SkipStep.webp)
 
 <details
 class="pivot"

@@ -1,7 +1,7 @@
 <section
 id="clone-your-fork"
 aria-labelledby="clone-your-fork"
-data-item="Clone Your Fork"
+data-item="6. Clone Your Fork"
 >
 <h2><a href="#clone-your-fork">Clone Your Fork to your Development Computer</a></h2>
 
@@ -10,12 +10,14 @@ For now, everything you have done has been on the GitHub site. Now it's time to 
 To clone your forked repository to your development computer:
 
 1. On the home page of your new repository, click on the green Code button and copy the link to the repository.
-![Clone your Fork](images/CloneFork.webp)
 
-2. On the desktop of your computer, create a new folder which you will use to hold all the repositories for your tutorials Organization. I'll simply call mine `MyTutorials`, like the name of my Organization.
-3. Open this new folder with VS Code, and open a new Terminal, type `git clone ` and then paste the link you have just copied.
-4. Press the Enter key
-![Clone Locally](images/LocalClone.webp)
+![Copy the URL of the remote repository](images/CloneFork.webp)
+
+1. On the desktop of your computer, create a new folder which you will use to hold all the repositories for your tutorials Organization. I'll simply call mine `MyTutorials`, like the name of my Organization.
+2. Open this new folder with VS Code, and open a new Terminal, type `git clone ` and then paste the link you have just copied.
+3. Press the Enter key
+
+![Clone the repository to your development computer](images/LocalClone.webp)
 
 ### What's in the Repository
 To explore the contents of your repository you can
@@ -24,7 +26,7 @@ To explore the contents of your repository you can
 3. In VS Code's Explorer open up all the subfolders, so you can see their contents. I'll explain these in due course.
 4. Click on `package.json`
 
-![package.json](images/packege-json.webp)
+![The contents of the repository](images/packege-json.webp)
 
 <details
 class="pivot"

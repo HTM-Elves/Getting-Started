@@ -1,13 +1,13 @@
 <section
 id="publish-your-fork"
 aria-labelledby="publish-your-fork"
-data-item="Publish Your Fork"
+data-item="5. Publish Your Fork"
 >
 <h2><a href="#publish-your-fork">Publish Your Fork on GitHub</a></h2>
 
 At the end of the previous step, your should find yourself on the home page of your newly-forked repository. Notice that there is a file called `index.html`.
 
-![The index.html file](images/index.webp)
+![The contents of your new repository](images/index.webp)
 
 When you use GitHub Pages to publish your newly-forked repository, it is this `index.html` file which will be used to create the home page. The repository also contains a `private/` directory which contains a script, a CSS file and a JSON file that will be used to customize the `index.html` page.
 
@@ -20,13 +20,13 @@ To publish the repository:
 3. In the Build and Deployment section, make sure that the `main` branch is selected, and choose the `/(root)` directory as the source.
 4. Click on Save
 
-![Publish with GitHub Pages](images/GitHubPages.webp)
+![Publishing with GitHub Pages](images/GitHubPages.webp)
 
 GitHub will queue your publish request, so you may have to wait a few minutes before the new page is ready. You should find it at `https://MyTutorials.github.io` (where you replace `MyTutorials` with the actual name of your new Organization).
 
 The home page of your new Organization should look something like this:
 
-![Welcome to MyTutorials](images/Welcome.webp)
+![A placeholder Welcome page](images/Welcome.webp)
 
 <details
 class="pivot"

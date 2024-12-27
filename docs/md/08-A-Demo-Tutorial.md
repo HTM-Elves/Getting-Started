@@ -1,7 +1,7 @@
 <section
 id="a-demo-tutorial"
 aria-labelledby="a-demo-tutorial"
-data-item="A Demo Tutorial"
+data-item="8. A Demo Tutorial"
 >
 <h2><a href="#a-demo-tutorial">A Demo Tutorial</a></h2>
 
@@ -15,7 +15,7 @@ As you saw earlier, the `package.json` file contains a script called `"demo"`. I
 
 If everything is properly installed, your browser should open showing a ready-made four-part tutorial. The content is a condensed version of this tutorial, without all the details.
 
-![npm run demo](images/RunDemo.webp)
+![Create a demo tutorial with a single command](images/RunDemo.webp)
 
 Just like this tutorial that you are reading now, this demo tutorial has the following features:
 
