@@ -15,7 +15,7 @@ open
 >
 <summary>Install Pandoc</summary>
 
-You must install Pandoc]on your development computer before continuing. Without Pandoc, there will be no magic.
+You must install Pandoc on your development computer before continuing. Without Pandoc, there will be no magic.
 
 **Follow the [installation instructions here](https://pandoc.org/installing.html).**
 
