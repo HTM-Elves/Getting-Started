@@ -1,7 +1,7 @@
 <section
 id="install-pandoc-and-watchman"
 aria-labelledby="install-pandoc-and-watchman"
-data-item="7. Pandoc and Watchman"
+data-item="Pandoc and Watchman"
 >
 <h2><a href="#install-pandoc-and-watchman">Install Pandoc and Watchman</a></h2>
 

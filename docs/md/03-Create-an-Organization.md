@@ -1,7 +1,7 @@
 <section
   id="create-your-organization"
   aria-labelledby="create-your-organization"
-  data-item="3. Create Your Organization"
+  data-item="Create Your Organization"
 >
   <h2><a href="#create-your-organization">Create Your Own Organization</a></h2>
 

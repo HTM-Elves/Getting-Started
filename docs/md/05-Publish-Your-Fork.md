@@ -1,7 +1,7 @@
 <section
 id="publish-your-fork"
 aria-labelledby="publish-your-fork"
-data-item="5. Publish Your Fork"
+data-item="Publish Your Fork"
 >
 <h2><a href="#publish-your-fork">Publish Your Fork on GitHub</a></h2>
 
@@ -40,7 +40,7 @@ For now, this page's existence proves two things:
 * You succeeded in using GitHub Pages to publish a home page for your new organization
 * The files in the `public/` folder are accessible to the Organization as a whole. The icons beside each dummy tutorial link are stored inside the `public/` folder, and the `index.html` file in at the root of your repository is able to show them.
 
-In the next steps , you'll see how to create a Demo tutorial and publish it to your new Organization.
+Soon you will create a Demo tutorial and publish it to your new Organization. To automate this process as much as possible, you should generate a _Personal Access Token_ on GitHub. 
 
 </details>
 </section>

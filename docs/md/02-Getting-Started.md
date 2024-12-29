@@ -1,7 +1,7 @@
 <section
 id="getting-started"
 aria-labelledby="getting-started"
-data-item="2. Getting Started"
+data-item="Getting Started"
 >
 <h2><a href="#getting-started">Getting Started</a></h2>
 
@@ -10,13 +10,14 @@ To get your very first demo tutorial up online, you're going to need to take 10 
 1. Create your own GitHub Organization.
 2. Fork the [HTM-Elves repository](https://github.com/HTM-Elves/HTM-Elves.github.io) into your new Organization.
 3. Use GitHub Pages to publish your new fork
-4. Clone your fork to your local computer
-5. Install Pandoc and Watchman locally
-6. Use HTM-Elves to generate a Demo tutorial automatically
-7. Create a new GitHub repository inside your new Organization for this demo tutorial
-8. Set the `origin` for your new local repository to the URL of your new GitHub repository
-9.  Push your local repository to GitHub
-10. Use GitHub Pages to publish this new tutorial repository for the world to see.
+4. Generate a Personal Access Token for GitHub
+5. Clone your fork to your local computer
+6. Install Pandoc and Watchman locally
+7. Use HTM-Elves to generate a Demo tutorial automatically
+8. Create a new GitHub repository inside your new Organization for this demo tutorial
+9. Set the `origin` for your new local repository to the URL of your new GitHub repository
+10. Push your local repository to GitHub
+11. Use GitHub Pages to publish this new tutorial repository for the world to see.
 
 <details
 class="tip"

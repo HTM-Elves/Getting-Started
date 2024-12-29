@@ -24,7 +24,7 @@ content="width=device-width, initial-scale=1.0"
 <h4>December 2024</h4>
 </header>
 
-<section id="getting-started" aria-labelledby="getting-started" data-item="2. Getting Started">
+<section id="getting-started" aria-labelledby="getting-started" data-item="Getting Started">
 <h2>
 <a href="#getting-started">Getting Started</a>
 </h2>
@@ -37,6 +37,7 @@ each step in detail, one by one.</p>
 href="https://github.com/HTM-Elves/HTM-Elves.github.io">HTM-Elves
 repository</a> into your new Organization.</li>
 <li>Use GitHub Pages to publish your new fork</li>
+<li>Generate a Personal Access Token for GitHub</li>
 <li>Clone your fork to your local computer</li>
 <li>Install Pandoc and Watchman locally</li>
 <li>Use HTM-Elves to generate a Demo tutorial automatically</li>
@@ -67,7 +68,7 @@ the steps listed above. Later, I’ll describe a number of techniques to
 simplify the writing process itself.</p>
 </details>
 </section>
-<section id="create-your-organization" aria-labelledby="create-your-organization" data-item="3. Create Your Organization">
+<section id="create-your-organization" aria-labelledby="create-your-organization" data-item="Create Your Organization">
 <h2>
 <a href="#create-your-organization">Create Your Own Organization</a>
 </h2>
@@ -134,7 +135,7 @@ are ready to convert your new Organization into a source of
 tutorials.</p>
 </details>
 </section>
-<section id="fork-htm-elves" aria-labelledby="fork-htm-elves" data-item="4. Fork HTM-Elves">
+<section id="fork-htm-elves" aria-labelledby="fork-htm-elves" data-item="Fork HTM-Elves">
 <h2>
 <a href="#fork-htm-elves">Fork HTM-Elves to your New Organization</a>
 </h2>
@@ -207,7 +208,7 @@ your Organization.</p>
 <p>These roles will be treated in the next sections.</p>
 </details>
 </section>
-<section id="publish-your-fork" aria-labelledby="publish-your-fork" data-item="5. Publish Your Fork">
+<section id="publish-your-fork" aria-labelledby="publish-your-fork" data-item="Publish Your Fork">
 <h2>
 <a href="#publish-your-fork">Publish Your Fork on GitHub</a>
 </h2>
@@ -271,11 +272,12 @@ stored inside the <code>public/</code> folder, and the
 <code>index.html</code> file in at the root of your repository is able
 to show them.</li>
 </ul>
-<p>In the next steps , you’ll see how to create a Demo tutorial and
-publish it to your new Organization.</p>
+<p>Soon you will create a Demo tutorial and publish it to your new
+Organization. To automate this process as much as possible, you should
+generate a <em>Personal Access Token</em> on GitHub.</p>
 </details>
 </section>
-<section id="clone-your-fork" aria-labelledby="clone-your-fork" data-item="6. Clone Your Fork">
+<section id="clone-your-fork" aria-labelledby="clone-your-fork" data-item="Clone Your Fork">
 <h2>
 <a href="#clone-your-fork">Clone Your Fork to your Development
 Computer</a>
@@ -343,7 +345,95 @@ make all the magic happen.</li>
 as the services that they rely on.</p>
 </details>
 </section>
-<section id="install-pandoc-and-watchman" aria-labelledby="install-pandoc-and-watchman" data-item="7. Pandoc and Watchman">
+<!-- GitHub Token -->
+<section id="github-token" aria-labelledby="github-token" data-item="Personal Access Token">
+<h2>
+<a href="#github-token">GitHub Personal Access Token</a>
+</h2>
+<p>GitHub provides an API (application programming interface) which
+allows you to manage your GitHub organization directly from your
+development computer, without visiting the GitHub web site in your
+browser. HTM-Elves can simply send the request for you.</p>
+<p>For privileged operations, like creating a new repository on the
+GitHub site, you need to obtain a <a
+href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">Personal
+Access Token</a> that will be sent along with the request, to prove that
+the request comes from you and that you approve it.</p>
+<ol type="1">
+<li>Log in to GitHub</li>
+<li>Visit <a href="https://github.com/settings/tokens">the Personal
+access tokens (classic) page</a></li>
+<li>Ensure that <code>Tokens (classic)</code> is selected</li>
+<li>Click on Generate New Token</li>
+</ol>
+<figure>
+<img src="images/GenerateToken.webp" alt="Generate a new token" />
+<figcaption aria-hidden="true">Generate a new token</figcaption>
+</figure>
+<ol start="5" type="1">
+<li>In the pop-up dialog, choose Generate New Token (Classic)</li>
+</ol>
+<figure>
+<img src="images/ClassicToken.webp" alt="Choose token (classic)" />
+<figcaption aria-hidden="true">Choose token (classic)</figcaption>
+</figure>
+<p>On the next page: 6. Add a note (like <code>HTM-Elves</code>) to
+remind you what this token is being used for 7. Set an expiration date.
+If you choose “No expiration”, GitHub will “strongly [recommend] that
+you set an expiration date for your token to help keep your information
+secure”, but it’s your choice. 8. Check the <code>repo</code> button.
+This will give your token the authority to create new repositories for
+you, and to use gh-pages to publish them. 9. Ignore all the other
+operations 10. Click on Generate Token</p>
+<figure>
+<img src="images/SelectScopes.webp"
+alt="Choose the settings for your token" />
+<figcaption aria-hidden="true">Choose the settings for your
+token</figcaption>
+</figure>
+<p>A new page will open with a long string of random numbers and letter
+that is your token.</p>
+<figure>
+<img src="images/CopyToken.webp"
+alt="Copy your personal access token" />
+<figcaption aria-hidden="true">Copy your personal access
+token</figcaption>
+</figure>
+<ol start="11" type="1">
+<li>Copy this string</li>
+<li>In VS Code, in your <code>MyTutorials.github.io</code> folder,
+create a new file named <code>.env</code>.</li>
+<li>Inside <code>.env</code> type <code>GITHUB_TOKEN=</code> and then
+paste the token, as shown in Figure 18 below.</li>
+</ol>
+<figure>
+<img src="images/dotenv.webp"
+alt="Create a .env file to store your personal access token" />
+<figcaption aria-hidden="true">Create a <code>.env</code> file to store
+your personal access token</figcaption>
+</figure>
+<details class="note" open>
+<summary>
+Keeping your secret safe
+</summary>
+<p>The <code>.gitignore</code> file in your
+<code>MyTutorials.github.io</code> folder contains an entry for
+<code>.env</code>:</p>
+<pre class="language-md"><code class="language-md"><i>node_modules/</i>
+<b>.env</b>
+<i>.DS_Store
+.vscode/*</i></code></pre>
+<p>This ensures that when you push your repository to GitHub, the
+<code>.env</code> file will not be sent to GitHub. Your secret token is
+safe.</p>
+</details>
+<details class="pivot" open>
+<summary>
+Access to the GitHub API
+</summary>
+</details>
+</section>
+<section id="install-pandoc-and-watchman" aria-labelledby="install-pandoc-and-watchman" data-item="Pandoc and Watchman">
 <h2>
 <a href="#install-pandoc-and-watchman">Install Pandoc and Watchman</a>
 </h2>
@@ -403,7 +493,7 @@ Ready to Generate a Demo Tutorial
 Node modules correctly, the fun is about to begin.</p>
 </details>
 </section>
-<section id="a-demo-tutorial" aria-labelledby="a-demo-tutorial" data-item="8. A Demo Tutorial">
+<section id="a-demo-tutorial" aria-labelledby="a-demo-tutorial" data-item="A Demo Tutorial">
 <h2>
 <a href="#a-demo-tutorial">A Demo Tutorial</a>
 </h2>
@@ -494,113 +584,19 @@ Summary
 <p>The <code>npm run demo</code> command also initialized a Git
 repository inside the Demo folder, and made a first
 <code>commit</code>.</p>
+<p>If you created a GitHub personal access token in step 7, then
+HTM-Elves also created a repository on GitHub called Demo, and set it up
+as the <code>origin</code> for your local repository.</p>
+<p>This means that when you click on the links at the foot of the menu,
+your browser should take you to the GitHub repository page, or to the
+Issues section if you click on Feedback.</p>
 <p>In the next step, you will push this repository to your Tutorials
 Organization, so that you can publish the <code>index.html</code> file
 with GitHub Pages.</p>
 </details>
 </section>
-<!-- Tutorial Repository on Github -->
-<section id="tutorial-repository-on-github" aria-labelledby="tutorial-repository-on-github" data-item="9. Tutorial Repo on Github">
-<h2>
-<a href="#tutorial-repository-on-github">Create a Tutorial Repository on
-Github</a>
-</h2>
-<p>To share your tutorial online, you will need to create a remote
-repository on GitHub. HTM-Elves expects you to use exactly the same name
-for your remote repository as for the tutorial directory that you just
-created.</p>
-<p>The directory that was just created is called “Demo”. If you look
-inside the file at <code>Demo/docs/md/99-Introduction.md</code>, you
-will see that it starts something like this:</p>
-<pre class="language-yaml line-numbers"><code class="language-yaml line-numbers">---
-title: Demo Tutorial
-subtitle: (replace with your own content)
-month: December 2024
-organization: MyTutorials
-repo: Demo
----</code></pre>
-<p>Pandoc will use the entries for <code>organization</code> and
-<code>repo</code> (which “Demo” in this case) to generate the links that
-you can find at the foot of the menu.</p>
-<figure>
-<img src="images/GitHubLink.webp"
-alt="The link to your GitHub repository is created automatically" />
-<figcaption aria-hidden="true">The link to your GitHub repository is
-created automatically</figcaption>
-</figure>
-<p>So now you need to create a GitHub repository at this location.</p>
-<ol type="1">
-<li>In your browser, visit the home page of your tutorials
-Organization.</li>
-<li>Click on the Repositories tab</li>
-<li>Click on the green New Repository button</li>
-</ol>
-<figure>
-<img src="images/NewRepo.webp" alt="Creating a new repository" />
-<figcaption aria-hidden="true">Creating a new repository</figcaption>
-</figure>
-<ol start="4" type="1">
-<li>On the next page, check that the Owner of the repository is indeed
-your new tutorials organization, and give your new repository the name
-Demo.</li>
-<li>Ensure that the Public radio button is checked</li>
-<li>You can leave the other fields as they are</li>
-<li>Click on the Create Repository.</li>
-</ol>
-<figure>
-<img src="images/NameRepository.webp"
-alt="Naming your new repository" />
-<figcaption aria-hidden="true">Naming your new repository</figcaption>
-</figure>
-<ol start="8" type="1">
-<li>On the next page, scroll to the end and copy the last three
-commands, as shown in Figure 20 below.</li>
-</ol>
-<figure>
-<img src="images/AddOrigin.png"
-alt="Copy the commands to set the remote for your local repository" />
-<figcaption aria-hidden="true">Copy the commands to set the remote for
-your local repository</figcaption>
-</figure>
-<ol start="9" type="1">
-<li>Back in VS Code, open a Terminal window on the Demo directory, and
-paste these commands. Use Ctrl-Shift-V (or Command-V on a Mac).</li>
-<li>Press Enter, to execute.</li>
-</ol>
-<figure>
-<img src="images/AddRemote.webp"
-alt="Add the remote origin, and push your last commit" />
-<figcaption aria-hidden="true">Add the remote origin, and push your last
-commit</figcaption>
-</figure>
-<details class="tip" open>
-<summary>
-Creating a GitHub Repository Automatically
-</summary>
-<p>As you might have guessed, the HTM-Elves workflow does provide a way
-for you to automatically create a GitHub repository, and to push your
-initial commit to it, with no input from you.</p>
-<p>However, before this will work, you will need to create a GitHub
-authorization token, and this requires some extra steps. I’ve described
-the process for doing this in the <a
-href="https://htm-elves.github.io/Writing-Your-Own-Tutorials/#automatic-repo-creation">Writing
-Your Own Tutorials</a> article.</p>
-</details>
-</details>
-<details class="pivot" open>
-<summary>
-Ready to go online
-</summary>
-<p>Now that you have set up a GitHub repository for your Demo tutorial
-repository, when you click on the links at the foot of the menu, your
-browser should take you to the GitHub repository page, or to the Issues
-section if you click on Feedback.</p>
-<p>After one last step, you will be able to share this
-tutorial-that-you-did-not-write with the world.</p>
-</details>
-</section>
 <!-- Deploy with gh pages -->
-<section id="deploy-with-gh-pages" aria-labelledby="deploy-with-gh-pages" data-item="10. Deploy With GH-Pages">
+<section id="deploy-with-gh-pages" aria-labelledby="deploy-with-gh-pages" data-item="Deploy With GH-Pages">
 <h2>
 <a href="#deploy-with-gh-pages">Deploy Your First Tutorial with
 GitHub-Pages</a>
@@ -640,23 +636,16 @@ If you change the styles in your
 to GitHub, all your tutorials will adopt the new styles.</p>
 <h2 id="deploying-the-docs-folder">Deploying the <code>/docs</code>
 folder</h2>
-<p>The process is almost the same as in step _5: Publish Your Fork:</p>
+<p>In step <em>5: Publish Your Fork</em>, you had to visit the Pages
+section on the GitHub website, and deal with everything manually. If you
+created a GitHub personal access token in step 7, then HTM-Elves can
+deploy the <code>/docs</code> folder of your Demo repository for you
+automatically.</p>
 <ol type="1">
-<li>Click on the Settings tab at the top right of the page. (You may
-have to click on a <code>...</code> button if the page is too narrow to
-show all the tabs.)</li>
-<li>In the menu column on the left, click on the Pages link</li>
-<li>In the Build and Deployment section, select the <code>main</code>
-branch</li>
-<li><strong>This time, choose the <code>/docs</code> directory as the
-source</strong></li>
-<li>Click on Save</li>
+<li>Open a Terminal window in your Demo folder</li>
+<li>Run the command <code>npm run publish</code>.</li>
 </ol>
-<figure>
-<img src="images/TutorialPages.webp"
-alt="Deploying your tutorial page" />
-<figcaption aria-hidden="true">Deploying your tutorial page</figcaption>
-</figure>
+<p>It’s as simple as that.</p>
 <p>As before, GitHub will queue your publish request, so you may have to
 wait a few minutes before the new page is ready. You should find it at
 <code>https://MyTutorials.github.io/Demo</code> (where you replace
@@ -697,7 +686,7 @@ on your writing and building your online reputation.</p>
 <h2 id="have-fun"><em>Have fun!</em></h2>
 </details>
 </section>
-<section id="introduction" aria-labelledby="introduction" data-item="1. Introduction">
+<section id="introduction" aria-labelledby="introduction" data-item="Introduction">
 <h2>
 <a href="#introduction">Introduction</a>
 </h2>

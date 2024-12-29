@@ -1,7 +1,7 @@
 <section
 id="a-demo-tutorial"
 aria-labelledby="a-demo-tutorial"
-data-item="8. A Demo Tutorial"
+data-item="A Demo Tutorial"
 >
 <h2><a href="#a-demo-tutorial">A Demo Tutorial</a></h2>
 
@@ -67,7 +67,11 @@ class="pivot"
   open
 >
 <summary>Summary</summary>
-The `npm run demo` command also initialized a Git repository inside the Demo folder, and made a first `commit`. 
+The `npm run demo` command also initialized a Git repository inside the Demo folder, and made a first `commit`.
+
+If you created a GitHub personal access token in step 7, then HTM-Elves also created a repository on GitHub called Demo, and set it up as the `origin` for your local repository.
+
+This means that when you click on the links at the foot of the menu, your browser should take you to the GitHub repository page, or to the Issues section if you click on Feedback.
 
 In the next step, you will push this repository to your Tutorials Organization, so that you can publish the `index.html` file with GitHub Pages.
 

@@ -2,7 +2,7 @@
 <section
 id="deploy-with-gh-pages"
 aria-labelledby="deploy-with-gh-pages"
-data-item="10. Deploy With GH-Pages"
+data-item="Deploy With GH-Pages"
 >
 <h2><a href="#deploy-with-gh-pages">Deploy Your First Tutorial with GitHub-Pages</a></h2>
 
@@ -32,15 +32,12 @@ This means that all your tutorials will share the same look and feel. If you cha
 
 ## Deploying the `/docs` folder
 
-The process is almost the same as in step _5: Publish Your Fork:
+In step _5: Publish Your Fork_, you had to visit the Pages section on the GitHub website, and deal with everything manually. If you created a GitHub personal access token in step 7, then HTM-Elves can deploy the `/docs` folder of your Demo repository for you automatically.
 
-1. Click on the Settings tab at the top right of the page. (You may have to click on a `...` button if the page is too narrow to show all the tabs.)
-2. In the menu column on the left, click on the Pages link
-3. In the Build and Deployment section, select the `main` branch
-4. **This time, choose the `/docs` directory as the source**
-5. Click on Save
+1. Open a Terminal window in your Demo folder
+2. Run the command `npm run publish`.
 
-![Deploying your tutorial page](images/TutorialPages.webp)
+It's as simple as that.
 
 As before, GitHub will queue your publish request, so you may have to wait a few minutes before the new page is ready. You should find it at `https://MyTutorials.github.io/Demo` (where you replace `MyTutorials` with the actual name of your tutorials Organization).
 

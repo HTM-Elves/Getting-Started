@@ -1,7 +1,7 @@
 <section
 id="fork-htm-elves"
 aria-labelledby="fork-htm-elves"
-data-item="4. Fork HTM-Elves"
+data-item="Fork HTM-Elves"
 >
 <h2><a href="#fork-htm-elves">Fork HTM-Elves to your New Organization</a></h2>
 
