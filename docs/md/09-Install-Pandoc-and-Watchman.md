@@ -38,21 +38,6 @@ If you see a response like `command not found: watchman`, then you will need to 
 
 </details>
 
-When you have installed these two services, you can install the Node modules that the HTM-Elves project will use to control them.
-
-<details
-class="warn"
-open
->
-<summary>Installing Node Modules</summary>
-**In a Terminal window open on your `MyTutorials.github.io` folder, run the command:**
-```bash-#w
-npm i
-```
-This will tell `npm` to install all the `devDependencies` listed in `package.json`.
-
-</details>
-
 <details
 class="pivot"
 open

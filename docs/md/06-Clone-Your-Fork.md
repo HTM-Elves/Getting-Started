@@ -20,25 +20,43 @@ To clone your forked repository to your development computer:
 ![Clone the repository to your development computer](images/LocalClone.webp)
 
 ### What's in the Repository
-To explore the contents of your repository you can
-1. Type `code -r M` then press the Tab key. (If your repository is not called `MyTutorials`, just type the first letter of your repository name instead of the `M`). Pressing the Tab key will make the Terminal autocomplete the name of the folder that has just been created.
-2. Press Enter
-3. In VS Code's Explorer open up all the subfolders, so you can see their contents. I'll explain these in due course.
-4. Click on `package.json`
 
-![The contents of the repository](images/packege-json.webp)
+The contents of your parent `MyTutorials` directory should now look like this:
 
-<details
-class="pivot"
-open
->
-<summary>Scripts and Dependencise</summary>
-The `package.json` file acts as the command centre for the repository. It has two sections which will make the whole workflow work:
+```bash-#w
+MyTutorials
+└── MyTutorials.github.io
+    ├── LICENSE
+    ├── README.md
+    ├── index.html
+    ├── newTutorial.js
+    ├── package.json
+    ├── private
+    │   ├── script.js
+    │   ├── styles.css
+    │   └── tutorials.json
+    └── public
+        ├── filter.js
+        ├── media-queries.css
+        ├── nodoc.webp
+        ├── prism
+        ├── script.js
+        ├── storage.js
+        ├── styles.css
+        ├── svg
+        ├── template.html
+        └── watch.js
+```
 
-* `"scripts"` provides two commands that you can use to generate a tutorial Template
-* `"devDependencies"` defines the node modules that will make all the magic happen.
+<details class="pivot" open>
+<summary>Completing the set-up</summary>
+There are three more steps before HTM-Elves will be ready to work on your development computer:
 
-In the next step, you will be installing these dependencies, as well as the services that they rely on.
+* Obtaining a GitHub personal access token, so that you can delegate GitHub house-keeping duties to HTM-Elves
+* Installing the Node Modules that the HTM-Elves scripts require
+* Installing two services —Pandoc itself and Meta's Watchman— to which HTM-Elves outsource all the hard work.
+
+Next step: the personal access token.
 
 </details>
 

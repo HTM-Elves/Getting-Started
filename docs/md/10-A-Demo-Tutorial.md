@@ -21,8 +21,8 @@ Just like this tutorial that you are reading now, this demo tutorial has the fol
 
 * A menu on the left which collapses to a hamburger if the viewport is not wide enough to show both the menu and the content.
 * A toggle button at the top of the menu that allows you to choose between showing the tutorial as a single page, or split into sections.
-* Two links at the foot of the menu (which don't work yet, because you haven't created the associated GitHub repository)
-* A footer at the end of each section which allows you to navigate to the next section
+* Two links at the foot of the menu which connect to the associated GitHub repository.
+* A footer at the end of each section which allows you to navigate to the next section.
 * Coloured collapsible blocks with information that you can skip over if you are in a hurry.
 * The month in which the tutorial was created in the top right corner.
 * Numbered and bullet lists, headers and other formatting.
@@ -32,10 +32,10 @@ The Demo tutorial has been created in a folder inside the  parent folder shared 
 
 The Demo folder also contains its own `package.json` file, which has its own `"scripts"`:
 
-```json
+```json-w
 {
   "scripts": {
-    "pandoc": "pandoc -o docs/index.html --template=public/template.html docs/md/*.md",
+    "pandoc": "pandoc -o docs/index.html --filter public/filter.js --template=public/template.html docs/md/*.md",
     "watch": "node public/watch.js Demo"
   }
 }
@@ -54,7 +54,7 @@ class="note"
 open
 >
 <summary>Markdown File Numbering System</summary>
-The Markdown files are numbered with zero-padded numbers, to make sure that they are treated in the correct order. However, counter-intuitively, the very first file (`99-Introduction.md`) has the _highest_ number. This is because of the way the page sections need to be handled by CSS. This issue is dealt with in more detail in the tutorial [Writing Your Own Tutorials](https://htm-elves.github.io/Writing-Your-Own-Tutorials/).
+The Markdown files are numbered with zero-padded numbers, to make sure that they are treated in the correct order. However, counter-intuitively, the very first file (`99-Introduction.md`) has the _highest_ number. This is because of the way the page sections need to be handled by CSS. This issue is dealt with in more detail in the tutorial [Writing Your Own Tutorials](http://127.0.0.1:5500/02-Writing-Your-Own-Tutorials/docs/index.html#target-or-last-child).
 
 </details>
 
@@ -69,11 +69,11 @@ class="pivot"
 <summary>Summary</summary>
 The `npm run demo` command also initialized a Git repository inside the Demo folder, and made a first `commit`.
 
-If you created a GitHub personal access token in step 7, then HTM-Elves also created a repository on GitHub called Demo, and set it up as the `origin` for your local repository.
+If you created a GitHub personal access token in step 7, then HTM-Elves will also have created a repository on GitHub called Demo, and set this up as the `origin` for your local repository. It will also have pushed the first commit to the GitHub repository.
 
 This means that when you click on the links at the foot of the menu, your browser should take you to the GitHub repository page, or to the Issues section if you click on Feedback.
 
-In the next step, you will push this repository to your Tutorials Organization, so that you can publish the `index.html` file with GitHub Pages.
+In the next step, you will see how to publish the `index.html` file with GitHub Pages.
 
 </details>
 </section>

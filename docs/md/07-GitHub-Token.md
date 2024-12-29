@@ -10,6 +10,8 @@ GitHub provides an API (application programming interface) which allows you to m
 
 For privileged operations, like creating a new repository on the GitHub site, you need to obtain a [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) that will be sent along with the request, to prove that the request comes from you and that you approve it.
 
+To do this:
+
 1. Log in to GitHub
 2. Visit [the Personal access tokens (classic) page](https://github.com/settings/tokens)
 3. Ensure that `Tokens (classic)` is selected
@@ -22,11 +24,12 @@ For privileged operations, like creating a new repository on the GitHub site, yo
 ![Choose token (classic)](images/ClassicToken.webp)
 
 On the next page:
+
 6. Add a note (like `HTM-Elves`) to remind you what this token is being used for
-7. Set an expiration date. If you choose "No expiration", GitHub will "strongly [recommend] that you set an expiration date for your token to help keep your information secure", but it's your choice.
+7. Set an expiration date. If you choose "No expiration", GitHub will "strongly [recommend] that you set an expiration date for your token to help keep your information secure". But it's your choice.
 8. Check the `repo` button. This will give your token the authority to create new repositories for you, and to use gh-pages to publish them.
 9. Ignore all the other operations
-10. Click on Generate Token
+10. Scroll to the end and click on Generate Token
 
 ![Choose the settings for your token](images/SelectScopes.webp)
 
@@ -56,7 +59,11 @@ This ensures that when you push your repository to GitHub, the `.env` file will 
 </details>
 <details class="pivot" open>
 <summary>Access to the GitHub API</summary>
+Now that you have a personal access token, and you have stored it in a place where HTM-Elves can find it, you can delegate most GitHub house-keeping tasks to HTM-Elves.
 
+But before you can get HTM-Elves to work for you, you will need to install some Node modules that will be used by the `newTutorial.js` script, and by the `filter.js` and `watch.js` scripts inside the `public/` folder.
+
+This is treated in the next step.
 
 </details>
 </section>
