@@ -66,12 +66,12 @@ Now you can install some useful snippets in a special file called `markdown.json
 1. Open the VS Code's Command Palette (`Ctrl-Shift-P`, or simply `F1`).
 2. Start typing "snippets", until the command "Snippets: Configure Snippets" is at the top of the list.
 
-![Caption](images/ConfigureSnippets.webp)
+![Using the Command Palette to configure snippets](images/ConfigureSnippets.webp)
 
 3. Press Enter.
 4. You'll see a list of all the languages that VS Code can provide snippets for. Start typing "Markdown" until `markdown.json` is at the top of the list.
 
-![Caption](images/MarkdownSnippets.webp)
+![Finding the markdown.json snippets file](images/MarkdownSnippets.webp)
 
 5. Press Enter.
 6. A file named `markdown.json` will open. It's not exactly a JSON file, because it supports JavaScript-like comments. It's probably just got comments in it and no snippets.
