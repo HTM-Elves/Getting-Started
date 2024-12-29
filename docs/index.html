@@ -737,9 +737,485 @@ page.</p>
 </figure>
 <details class="pivot" open>
 <summary>
-Conclusion
+A demo tutorial live online
 </summary>
-<h2 id="congratulations"><em>Congratulations!</em></h2>
+<p>Congratulations! You’ve seen how to publish a tutorial online. But
+you haven’t yet written anything yourself.</p>
+<p>There are still a couple of things to set up to take full advantage
+of what HTM-Elves have to offer.</p>
+<ol type="1">
+<li>A system to update the HTML page in your browser live, while you are
+editing your Markdown files</li>
+<li>A set of <a
+href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">VS
+Code snippets</a> to minimize typing chunks of text that you need to use
+regularly.</li>
+</ol>
+The last two steps in this tutorial will show you how to get ready for
+writing your own tutorials in comfort.
+</details>
+</section>
+<section id="live-reload" aria-labelledby="live-reload" data-item="Live Reload">
+<h2>
+<a href="#live-server">Live Reload with Live Server and Watchman</a>
+</h2>
+<p>VS Code Marketplace provides a vast collection of free extensions for
+VS Code. One of these is <a
+href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live
+Server</a>, by Ritwick Dey. Live Server is a local development server
+with live reload feature. When you change contents of an HTML page
+served by Live Server, your browser automatically reloads the modified
+HTML page.</p>
+<p>To install Live Server:</p>
+<ol type="1">
+<li>Choose the menu item View &gt; Extensions, or click on the
+Extensions icon in the Activity Bar, as shown in Figure 6 below.</li>
+<li>Start typing <code>Live Server</code> in the Search Bar at the top
+of the Extensions panel</li>
+<li>Click on Live Server by Ritwick Dey</li>
+<li>Click on the blue Install button.</li>
+</ol>
+<figure>
+<img src="images/InstallLiveServer.webp" alt="Install Live Server" />
+<figcaption aria-hidden="true">Install Live Server</figcaption>
+</figure>
+<details class="alert" open>
+<summary>
+The right installations
+</summary>
+<p>There is another extension with the name “Live Server (Five Server)”,
+by Yannick. It has a very similar logo, but this is not the extension
+that I recommend.</p>
+<p><strong>Be sure to select Live Server by Ritwick Dey.</strong></p>
+<p><strong>You must also have <a
+href="https://facebook.github.io/watchman/">Meta’s open source Watchman
+service</a> installed before you continue.</strong></p>
+</details>
+<h2 id="using-live-server-with-watchman">Using Live Server with
+Watchman</h2>
+<p>If you edit any of the <code>.md</code> files in
+<code>docs/md/</code> folder now, nothing will change in your browser.
+You need to start the Watchman service, to trigger Pandoc when any
+Markdown files change, and you need to serve
+<code>docs/index.html</code> with Live Server, so that the browser will
+reload the page each time Pandoc updates
+<code>docs/index.html</code>.</p>
+<p>To do this:</p>
+<ol type="1">
+<li>Open a Terminal window on the <code>Demo</code> directory.</li>
+<li>Run the command <code>npm run watch</code></li>
+<li>In the Explorer pane, Right-Click on the file at
+<code>Demo/docs/index.html</code></li>
+<li>In the contextual menu that opens, choose Open With Live Server</li>
+</ol>
+<figure>
+<img src="images/WatchLive.webp"
+alt="Making the browser update live as you edit the Markdown files" />
+<figcaption aria-hidden="true">Making the browser update live as you
+edit the Markdown files</figcaption>
+</figure>
+<p>A new tab should open in your favourite browser, with a live version
+of your tutorial. If you now edit <code>docs/md/99-intro.md</code> (for
+example), you should see the changes immediately in your browser.</p>
+<figure>
+<img src="images/FirstEdits.webp"
+alt="As you edit the Markdown files, the browser reloads index.html" />
+<figcaption aria-hidden="true">As you edit the Markdown files, the
+browser reloads index.html</figcaption>
+</figure>
+<details class="pivot" open>
+<summary>
+Side by Side
+</summary>
+<p>Pandoc has some specific opinions about where blank lines are
+required. If you don’t respect these opinions, Pandoc might not format
+your pages the way you expect. Also, the captions for images are
+numbered dynamically, and sometimes you may want to refer to a
+particular image by its number.</p>
+<p>For these reasons, I like to work with the live browser preview open
+alongside the Markdown page that I am editing (as shown in Figure 25
+above).</p>
+<p>You’ll see in the next steps how to edit the settings for the title,
+headers and links, and also how to format the text itself.</p>
+</details>
+</section>
+<!-- Markdown Snippets -->
+<section id="markdown-snippets" aria-labelledby="markdown-snippets" data-item="Markdown Snippets">
+<h2>
+<a href="#markdown-snippets">Markdown Snippets</a>
+</h2>
+<p>If you look at <code>MyTutorials/Demo/docs/md/99-Intro.md</code>,
+you’ll see section near the top that looks like this:</p>
+<pre class="language-md line-numbers" data-start="8"><code class="language-md line-numbers">&lt;section
+  id="introduction"
+  aria-labelledby="introduction"
+  data-item="Introduction"
+&gt;
+  &lt;h2&gt;&lt;a href="#introduction"&gt;Introduction&lt;/a&gt;&lt;/h2&gt;</code></pre>
+<pre class="skip"><code class="skip">&lt;!-- Some lines skipped --&gt;</code></pre>
+<pre class="language-md line-numbers" data-start="53"><code class="language-md line-numbers">&lt;/section&gt;</code></pre>
+<p><strong><em>“Wait a minute!”</em></strong> I hear you say.
+<strong><em>“This looks like HTML, but I thought that the whole point of
+this HTM-Elves workflow was to avoid writing any
+HTML!”</em></strong></p>
+<p>You are right. You won’t be <em>writing</em> any HTML, but you will
+be <em>using</em> HTML, when standard Markdown needs a little help. And
+Markdown needs help in creating container elements, like sections. And
+HTM-Elves is structured to use <code>&lt;section&gt;</code> element for
+each logical section.</p>
+<p>I don’t want to type out chunks of HTML code each time I want a new
+section, or a <code>&lt;details&gt;</code> element or another kind of
+container. Instead I use <a
+href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">VS
+Code Snippets</a> to create such chunks for me. Snippets are templates
+that allow you to insert predictable chunks of text, and customize them
+quickly depending on the context.</p>
+<p>If you haven’t used VS Code Snippets before, then you’re in for a
+pleasant surprise. By default, though, VS Code does not provide any
+snippets for Markdown, and the use of snippets in Markdown files is
+disactivated.</p>
+<p>To get Markdown snippets to work for you, you need two things:</p>
+<ol type="1">
+<li>To activate <code>quicksuggestions</code> for Markdown files</li>
+<li>A file named <code>markdown.json</code> with some useful
+snippets.</li>
+</ol>
+<h2 id="activate-quicksuggestions-for-markdown-files">Activate
+<code>quicksuggestions</code> for Markdown files</h2>
+<p>To activate <code>quicksuggestions</code> for Markdown files, you
+need to:</p>
+<ol type="1">
+<li>Open the VS Code’s Command Palette. The lazy way is to use the menu
+item <code>View &gt; Command Palette</code>, but that means that you
+have to move your hands away from your keyboard, which wastes time.
+Instead, use the keyboard shortcut <code>Ctrl-Shift-P</code>, or simply
+<code>F1</code>.</li>
+<li>Start typing some part of “Preferences: Configure Language Specific
+Settings”. (I find that “Lang Set” is enough to bring the appropriate
+command to the top of the list.)</li>
+</ol>
+<figure>
+<img src="images/LanguageSettings.webp"
+alt="Configure Language Specific Settings" />
+<figcaption aria-hidden="true">Configure Language Specific
+Settings</figcaption>
+</figure>
+<ol start="3" type="1">
+<li>Press Enter. You will see a list of all the languages that VS Code
+can handle. Start typing “Markdown”, then press Enter when Markdown
+appears at the top of the list.</li>
+</ol>
+<figure>
+<img src="images/MarkdownSettings.webp" alt="Markdown Settings" />
+<figcaption aria-hidden="true">Markdown Settings</figcaption>
+</figure>
+<ol start="4" type="1">
+<li>In the Search bar, <code>@lang:markdown</code> will already appear.
+Start adding the word <code>quicksuggestions</code>, until the entry
+“Editor: <strong>Quick Suggestions</strong>” appears.</li>
+</ol>
+<figure>
+<img src="images/quickSuggestions.webp"
+alt="Editor: Quick Suggestions" />
+<figcaption aria-hidden="true">Editor: Quick Suggestions</figcaption>
+</figure>
+<ol start="5" type="1">
+<li>For the item <code>other</code>, click on the Pencil icon, which
+appears when you hover your mouse in the right place, then use the
+contextual menu to select <code>on</code>.</li>
+<li>Click OK.</li>
+</ol>
+<figure>
+<img src="images/ActivateQuickSuggestions.webp"
+alt="Activating Markdown snippets in VS Code" />
+<figcaption aria-hidden="true">Activating Markdown snippets in VS
+Code</figcaption>
+</figure>
+<h2 id="install-some-useful-snippets">Install some useful snippets</h2>
+<p>Now you can install some useful snippets in a special file called
+<code>markdown.json</code>. To open this file:</p>
+<ol type="1">
+<li>Open the VS Code’s Command Palette (<code>Ctrl-Shift-P</code>, or
+simply <code>F1</code>).</li>
+<li>Start typing “snippets”, until the command “Snippets: Configure
+Snippets” is at the top of the list.</li>
+</ol>
+<figure>
+<img src="images/ConfigureSnippets.webp" alt="Caption" />
+<figcaption aria-hidden="true">Caption</figcaption>
+</figure>
+<ol start="3" type="1">
+<li>Press Enter.</li>
+<li>You’ll see a list of all the languages that VS Code can provide
+snippets for. Start typing “Markdown” until <code>markdown.json</code>
+is at the top of the list.</li>
+</ol>
+<figure>
+<img src="images/MarkdownSnippets.webp" alt="Caption" />
+<figcaption aria-hidden="true">Caption</figcaption>
+</figure>
+<ol start="5" type="1">
+<li>Press Enter.</li>
+<li>A file named <code>markdown.json</code> will open. It’s not exactly
+a JSON file, because it supports JavaScript-like comments. It’s probably
+just got comments in it and no snippets.</li>
+<li>Copy the JSON from the code listing below and use this to replace
+the current contents of the file.</li>
+</ol>
+<details class="warn" open>
+<summary>
+Don’t overwrite existing snippets
+</summary>
+<p>If there are already some Markdown snippets in the file, simply add
+the snippets from the code listing below, rather than replacing
+everything.</p>
+</details>
+<p>Here are the Markdown snippets that I use regularly in connection
+with HTM-Elves:</p>
+<pre class="language-json wrap"><code class="language-json wrap">{
+    // Place your snippets for markdown here. Each snippet is
+    // defined under a snippet name and has a prefix, body and
+    // description. The prefix is what is used to trigger the 
+    // snippet and the body will be expanded and inserted. Possible
+    // variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and
+    // ${1:label}, ${2:another} for placeholders. Placeholders with
+    // the same ids are connected.
+
+    // For more details, see
+    // https://code.visualstudio.com/docs/editor/userdefinedsnippets
+
+    "dynamic section":{
+        "body": [
+            "&lt;!-- ${1:${TM_FILENAME/(^[0-9 ._-]+)|(\\..{1,4}$)|([a-z0-9]+)|([ _-]+)|(.)/${3}${4:+ }${5}/gi}} --&gt;\n&lt;section\n  id=\"${2:${1/([a-z0-9]+)|([\\s_.-]+)|(.)/${1:/downcase}${2:+-}/gi}}\"\n  aria-labelledby=\"$2\"\n  data-item=\"${3:${1/([\\s_\\.-]+)|('\\w(?=(?:\\s|$)))|(\\w+)/${1:+ }$2${3:/capitalize}/g}}\"\n&gt;\n  &lt;h2&gt;&lt;a href=\"#$2\"&gt;${4:${3/([_\\.-]+)|('\\w(?=(?:\\s|$)))|(\\w+)/${1:+ }$2${3:/capitalize}/g}}&lt;/a&gt;&lt;/h2&gt;\n  $0\n\n&lt;/section&gt;"
+        ],
+        "prefix": "sss",
+        "description": "id+data-item+header from file name"
+    },
+    // See Open VS Code Issue: #112362
+    // https://github.com/microsoft/vscode/issues/112362#issuecomment-947556633
+    "section": {
+        "prefix": "section",
+        "body": [
+            "&lt;section\n  id=\"${1:section-id}\"\n  aria-labelledby=\"$1\"\n  data-item=\"${2:Title for Menu}\"\n&gt;\n  &lt;h2&gt;&lt;a href=\"#$1\"&gt;${3:$2}&lt;/a&gt;&lt;/h2&gt;\n  $0\n&lt;/section&gt;"
+        ],
+        "description": "Customize id, data-item and header. Add content."
+    },
+    "details": {
+        "prefix": "ddd",
+        "body": [
+            "&lt;details class=\"${1|alert,challenge,env,feedback,note,pivot,question,tip,tldr,warn|}\"${2: open}&gt;\n&lt;summary&gt;${3:Summary}&lt;/summary&gt;\n${4:$TM_SELECTED_TEXT}\n\n&lt;/details&gt;"
+        ],
+        "description": "details element"
+    },
+    "javascript code block": {
+        "prefix": "js",
+        "body": [
+            "```javascript\n$1\n```\n$0"
+        ],
+        "description": "javascript code block"
+    },
+    "json code block": {
+        "prefix": "json",
+        "body": [
+            "```json\n$1\n```\n$0"
+        ],
+        "description": "json code block"
+    },
+    "html code block": {
+        "prefix": "html",
+        "body": [
+            "```html\n$1\n```\n$0"
+        ],
+        "description": "html code block"
+    },
+    "md code block": {
+        "prefix": "md",
+        "body": [
+            "```md\n$1\n```\n$0"
+        ],
+        "description": "markdown code block"
+    },
+    "css code block": {
+        "prefix": "css",
+        "body": [
+            "```css\n$1\n```\n$0"
+        ],
+        "description": "css code block"
+    },
+    "bash code block": {
+        "prefix": "bash",
+        "body": [
+            "```bash-#w\n$1\n```\n$0"
+        ],
+        "description": "bash code block without numbering"
+    },
+    "insert image": {
+        "prefix": "img",
+        "body": [
+            "![${2:Caption}](images${1:/filename})"
+        ],
+        "description": "insert image"
+    }
+}</code></pre>
+<details class="pivot" open>
+<summary>
+All set!
+</summary>
+<p>Now that you have Markdown snippets installed and activated,
+HTM-Elves is ready to do plenty of heavy lifting for you. But just
+before you start writing your own tutorials, in the next section, I’ll
+show you just what Markdown snippets can do.</p>
+</details>
+</section>
+<!-- Testing Snippets -->
+<section id="testing-snippets" aria-labelledby="testing-snippets" data-item="Testing Snippets">
+<h2>
+<a href="#testing-snippets">Testing Snippets</a>
+</h2>
+<p>Here’s how you can test the power of snippets.</p>
+<ol type="1">
+<li>In the <code>Demo/docs/md/</code> folder, create a new file named
+<code>12.3-Let's_Test_Snippets!.md</code></li>
+<li>In the file, type <code>sss</code> and then press the Tab key. You
+should see the following HTML block inserted in the file:</li>
+</ol>
+<pre class="language-md"><code class="language-md">&lt;!-- Let's Test Snippets! --&gt;
+&lt;section
+  id="Let's Test Snippets!"
+  aria-labelledby="Let's Test Snippets!"
+  data-item="Let's Test Snippets!"
+&gt;
+  &lt;h2&gt;&lt;a href="#Let's Test Snippets!"&gt;Let's Test Snippets!&lt;/a&gt;&lt;/h2&gt;
+  
+
+&lt;/section&gt;</code></pre>
+<p>The <em>prefix</em> <code>sss</code> triggered the wonderful snippet
+(shown below) that you just added to your <code>markdown.json</code>
+file. I chose <code>sss</code> as the prefix trigger, because
+<code>section</code> starts with an <code>"s"</code>, and I’m too lazy
+to move more than one finger.</p>
+<pre class="language-json wrap"><code class="language-json wrap"><i>"dynamic section":{
+    "body": [
+        "&lt;!-- ${1:${TM_FILENAME/(^[0-9 ._-]+)|(\\..{1,4}$)|([a-z0-9]+)|([ _-]+)|(.)/${3}${4:+ }${5}/gi}} --&gt;\n&lt;section\n  id=\"${2:${1/([a-z0-9]+)|([\\s_.-]+)|(.)/${1:/downcase}${2:+-}/gi}}\"\n  aria-labelledby=\"$2\"\n  data-item=\"${3:${1/([\\s_\\.-]+)|('\\w(?=(?:\\s|$)))|(\\w+)/${1:+ }$2${3:/capitalize}/g}}\"\n&gt;\n  &lt;h2&gt;&lt;a href=\"#$2\"&gt;${4:${3/([_\\.-]+)|('\\w(?=(?:\\s|$)))|(\\w+)/${1:+ }$2${3:/capitalize}/g}}&lt;/a&gt;&lt;/h2&gt;\n  $0\n\n&lt;/section&gt;"
+    ],
+    </i><b>"prefix": "sss"</b><i>,
+    "description": "id+data-item+header from file name"
+}</i></code></pre>
+<p>You don’t need to worry now about <em>how</em> this monstrosity
+works. However, you can already see that:</p>
+<ul>
+<li>It read in the name of the Markdown file</li>
+<li>It stripped the numbers from the beginning and the <code>.md</code>
+extension from the end</li>
+<li>It converted all the underscore <code>_</code> characters to
+spaces.</li>
+</ul>
+<p>But not everything is perfect yet. As an <code>id</code>, the string
+<code>"Let's Test Snippets!"</code> is not ideal. So now for some
+magic.</p>
+<ol type="1">
+<li>Press the Tab key again.</li>
+</ol>
+<p>Immediately, the <code>id</code>, <code>aria-labelledby</code>, and
+<code>href</code> values get sanitized.</p>
+<pre class="language-md wrap"><code class="language-md wrap"><i>&lt;!-- Let's Test Snippets! --&gt;
+&lt;section
+  id="</i><b><s>lets-test-snippets</s></b><i>"
+  aria-labelledby="</i><b><s>lets-test-snippets</s></b><i>"
+  data-item="Let's Test Snippets!"
+&gt;
+  &lt;h2&gt;&lt;a href="#</i><b><s>lets-test-snippets</s></b><i>"&gt;Let's Test Snippets!&lt;/a&gt;&lt;/h2&gt;
+  
+
+&lt;/section&gt;</i></code></pre>
+<ul>
+<li>They are converted to lowercase</li>
+<li>The spaces are replaced by dashes: <code>-</code></li>
+<li>Non-alphanumeric characters like the apostrophe <code>'</code> and
+the exclamation mark <code>!</code> are removed.</li>
+<li>The <code>href</code> is given a leading hash character:
+<code>#</code></li>
+<li>All three entries are selected, allowing you to edit them all at
+once if you want to.</li>
+</ul>
+<ol start="4" type="1">
+<li>Press the Tab key again.</li>
+</ol>
+<pre class="language-md wrap"><code class="language-md wrap"><i>&lt;!-- Let's Test Snippets! --&gt;
+&lt;section
+  id="lets-test-snippets"
+  aria-labelledby="lets-test-snippets"
+  data-item="</i><b><s>Let's Test Snippets!</s></b><i>"
+&gt;
+  &lt;h2&gt;&lt;a href="#lets-test-snippets"&gt;</i><b><s>Let's Test Snippets!</s></b><i>&lt;/a&gt;&lt;/h2&gt;
+  
+
+&lt;/section&gt;</i></code></pre>
+<p>This time the entries for <code>data-item</code> and the
+<code>&lt;h2&gt;</code> link text are selected. You can change them both
+at the same time, if you wish. The value for <code>data-item</code> is
+used in the menu, so it should be quite short.</p>
+<ol start="5" type="1">
+<li>Press the Tab key a fourth time.</li>
+</ol>
+<pre class="language-md wrap"><code class="language-md wrap"><i>&lt;!-- Let's Test Snippets! --&gt;
+&lt;section
+  id="lets-test-snippets"
+  aria-labelledby="lets-test-snippets"
+  data-item="Let's Test Snippets!"
+&gt;
+  &lt;h2&gt;&lt;a href="#lets-test-snippets"&gt;</i><b><s>Let's Test Snippets!</s></b><i>&lt;/a&gt;&lt;/h2&gt;
+  
+
+&lt;/section&gt;</i></code></pre>
+<p>Now only the the <code>&lt;h2&gt;</code> link text is selected, so
+you can create a longer header for the section, if that is
+appropriate.</p>
+<ol start="6" type="1">
+<li>Press the Tab key one last time. The cursor moves to just beneath
+the <code>&lt;h2&gt;</code> tag. If you type something here, it gets
+added to your page.</li>
+</ol>
+<pre class="language-md"><code class="language-md">&lt;!-- Let's Test Snippets! --&gt;
+&lt;section
+  id="lets-test-snippets"
+  aria-labelledby="lets-test-snippets"
+  data-item="Let's Test Snippets!"
+&gt;
+  &lt;h2&gt;&lt;a href="#lets-test-snippets"&gt;Let's Test Snippets!&lt;/a&gt;&lt;/h2&gt;
+  Now let's start writing some tutorials!
+
+&lt;/section&gt;</code></pre>
+<figure>
+<img src="images/UsingSnippets.webp"
+alt="Your new page, already with its own menu item" />
+<figcaption aria-hidden="true">Your new page, already with its own menu
+item</figcaption>
+</figure>
+<details class="pivot" open>
+<summary>
+Time saving with HTM-Elves
+</summary>
+<p>Thanks to Markdown snippets, it’s taken you only a few simple
+gestures to create a new page and integrate it into the output
+<code>index.html</code> page, along with its own entry in the menu.</p>
+<p>Check out the official <a
+href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">VS
+Code Snippet documentation</a> for more details on how to write your own
+snippets..</p>
+<p>To publish the latest version of your Demo tutorial, all you need to
+do is commit your changes and push them to GitHub.</p>
+<p>After this short introduction, I hope that you can already see how
+HTM-Elves can motivate you to share you knew knowledge with your
+colleagues and the world in general.</p>
+</details>
+</section>
+<!-- Conclusion -->
+<section id="conclusion" aria-labelledby="conclusion" data-item="Conclusion">
+<h2>
+<a href="#conclusion"><i>Congratulations!</i></a>
+</h2>
 <p>You have seen how to:</p>
 <ul>
 <li>Create your own GitHub Organization where you can publish
@@ -753,7 +1229,12 @@ organization</li>
 <li>Use HTM-Elves to generate a Demo tutorial automatically and push it
 to a new GitHub repository inside your new organization</li>
 <li>Use GitHub Pages to publish this new tutorial repository for the
-world to see.</li>
+world to see</li>
+<li>Use Live Server and Watchman to see your web page update live as you
+type</li>
+<li>Install and activate Markdown snippets, to streamline your writing
+process</li>
+<li>Create and edit new pages.</li>
 </ul>
 <p>The next step is to write a tutorial of your own, and to publish it
 using the same workflow. The article <a
@@ -762,7 +1243,6 @@ Your Own Tutorials</a> is designed to show you all the tricks and
 shortcuts that the HTM-Elves workflow offers you, so that you can focus
 on your writing and building your online reputation.</p>
 <h2 id="have-fun"><em>Have fun!</em></h2>
-</details>
 </section>
 <section id="introduction" aria-labelledby="introduction" data-item="Introduction">
 <h2>

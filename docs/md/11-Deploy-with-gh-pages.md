@@ -58,23 +58,14 @@ It should look something like this:
 class="pivot"
 open
 >
-<summary>Conclusion</summary>
-## _Congratulations!_
+<summary>A demo tutorial live online</summary>
+Congratulations! You've seen how to publish a tutorial online. But you haven't yet written anything yourself.
 
-You have seen how to:
+There are still a couple of things to set up to take full advantage of what HTM-Elves have to offer.
 
-* Create your own GitHub Organization where you can publish tutorials
-* Fork the HTM-Elves repository, to use as the root of your tutorial organization
-* Publish your forked repository, with its dummy home page
-* Clone your forked repository to your local computer
-* Generate and use a GitHub personal access token
-* Install Pandoc and Watchman and a set of Node modules
-* Use HTM-Elves to generate a Demo tutorial automatically and push it to a new GitHub repository inside your new organization
-* Use GitHub Pages to publish this new tutorial repository for the world to see.
+1. A system to update the HTML page in your browser live, while you are editing your Markdown files
+2. A set of [VS Code snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets) to minimize typing chunks of text that you need to use regularly.
 
-The next step is to write a tutorial of your own, and to publish it using the same workflow. The article [Writing Your Own Tutorials](https://htm-elves.github.io/Writing-Your-Own-Tutorials/#section-snippets) is designed to show you all the tricks and shortcuts that the HTM-Elves workflow offers you, so that you can focus on your writing and building your online reputation.
-
-## _Have fun!_
-
+The last two steps in this tutorial will show you how to get ready for writing your own tutorials in comfort.
 </details>
 </section>
