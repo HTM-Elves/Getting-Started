@@ -51,11 +51,11 @@ Immediately, the `id`, `aria-labelledby`, and `href` values get sanitized.
 ```md-w
 <i><!-- Let's Test Snippets! -->
 <section
-  id="</i><b><s>lets-test-snippets</s></b><i>"
-  aria-labelledby="</i><b><s>lets-test-snippets</s></b><i>"
+  id="</i><b><u>lets-test-snippets</u></b><i>"
+  aria-labelledby="</i><b><u>lets-test-snippets</u></b><i>"
   data-item="Let's Test Snippets!"
 >
-  <h2><a href="#</i><b><s>lets-test-snippets</s></b><i>">Let's Test Snippets!</a></h2>
+  <h2><a href="#</i><b><u>lets-test-snippets</u></b><i>">Let's Test Snippets!</a></h2>
   
 
 </section></i>
@@ -74,9 +74,9 @@ Immediately, the `id`, `aria-labelledby`, and `href` values get sanitized.
 <section
   id="lets-test-snippets"
   aria-labelledby="lets-test-snippets"
-  data-item="</i><b><s>Let's Test Snippets!</s></b><i>"
+  data-item="</i><b><u>Let's Test Snippets!</u></b><i>"
 >
-  <h2><a href="#lets-test-snippets"></i><b><s>Let's Test Snippets!</s></b><i></a></h2>
+  <h2><a href="#lets-test-snippets"></i><b><u>Let's Test Snippets!</u></b><i></a></h2>
   
 
 </section></i>
@@ -92,7 +92,7 @@ This time the entries for `data-item` and the `<h2>` link text are selected. You
   aria-labelledby="lets-test-snippets"
   data-item="Let's Test Snippets!"
 >
-  <h2><a href="#lets-test-snippets"></i><b><s>Let's Test Snippets!</s></b><i></a></h2>
+  <h2><a href="#lets-test-snippets"></i><b><u>Let's Test Snippets!</u></b><i></a></h2>
   
 
 </section></i>

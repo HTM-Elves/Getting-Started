@@ -25,7 +25,7 @@ If you look at `MyTutorials/Demo/docs/md/99-Intro.md`, you'll see section near t
 
 ***"Wait a minute!"*** I hear you say. ***"This looks like HTML, but I thought that the whole point of this HTM-Elves workflow was to avoid writing any HTML!"***
 
-You are right. You won't be _writing_ any HTML, but you will be _using_ HTML, when standard Markdown needs a little help. And Markdown needs help in creating container elements, like sections. And HTM-Elves is structured to use `<section>` element for each logical section.
+You are right. You won't be _writing_ any HTML, but you will be _using_ HTML, when standard Markdown needs a little help. And Markdown needs help in creating container elements, like sections. And HTM-Elves is structured to use a `<section>` element for each logical section.
 
 I don't want to type out chunks of HTML code each time I want a new section, or a `<details>` element or another kind of container. Instead I use [VS Code Snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets) to create such chunks for me. Snippets are templates that allow you to insert predictable chunks of text, and customize them quickly depending on the context.
 
@@ -163,6 +163,41 @@ Here are the Markdown snippets that I use regularly in connection with HTM-Elves
 			"```bash-#w\n$1\n```\n$0"
 		],
 		"description": "bash code block without numbering"
+	},
+	"<b>": {
+		"prefix": "<b",
+		"body": [
+			"<b>$SELECTION</b"
+		],
+		"description": "create bright block"
+	},
+	"<i>": {
+		"prefix": "<i",
+		"body": [
+			"<i>$SELECTION</i"
+		],
+		"description": "create dimmed block"
+	},
+	"</i><b>": {
+		"prefix": "ib",
+		"body": [
+			"</i><b>$SELECTION</b><i>"
+		],
+		"description": "insert bright block"
+	},
+	"<s>": {
+		"prefix": "<s",
+		"body": [
+			"<s>$SELECTION</s"
+		],
+		"description": "create deleted block"
+	},
+	"<u>": {
+		"prefix": "<u",
+		"body": [
+			"<u>$SELECTION</u"
+		],
+		"description": "create selection"
 	},
 	"insert image": {
 		"prefix": "img",
