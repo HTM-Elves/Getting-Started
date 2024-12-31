@@ -118,49 +118,49 @@ Here are the Markdown snippets that I use regularly in connection with HTM-Elves
 	"details": {
 		"prefix": "ddd",
 		"body": [
-			"<details class=\"${1|alert,challenge,env,feedback,note,pivot,question,tip,tldr,warn|}\"${2: open}>\n<summary>${3:Summary}</summary>\n${4:$TM_SELECTED_TEXT}\n\n</details>"
+			"<details class=\"${1|alert,challenge,env,feedback,note,pivot,question,solution,tip,tldr,warn|}\"${2: open}>\n<summary>${3:Summary}</summary>\n${4:$TM_SELECTED_TEXT}\n\n</details>"
 		],
 		"description": "details element"
 	},
 	"javascript code block": {
 		"prefix": "js",
 		"body": [
-			"```javascript\n$1\n```\n$0"
+			"```javascript\n${1:$SELECTION}\n```\n$0"
 		],
 		"description": "javascript code block"
 	},
 	"json code block": {
 		"prefix": "json",
 		"body": [
-			"```json\n$1\n```\n$0"
+			"```json\n${1:$SELECTION}\n```\n$0"
 		],
 		"description": "json code block"
 	},
 	"html code block": {
 		"prefix": "html",
 		"body": [
-			"```html\n$1\n```\n$0"
+			"```html\n${1:$SELECTION}\n```\n$0"
 		],
 		"description": "html code block"
 	},
 	"md code block": {
 		"prefix": "md",
 		"body": [
-			"```md\n$1\n```\n$0"
+			"```md\n${1:$SELECTION}\n```\n$0"
 		],
 		"description": "markdown code block"
 	},
 	"css code block": {
 		"prefix": "css",
 		"body": [
-			"```css\n$1\n```\n$0"
+			"```css\n${1:$SELECTION}\n```\n$0"
 		],
 		"description": "css code block"
 	},
 	"bash code block": {
 		"prefix": "bash",
 		"body": [
-			"```bash-#w\n$1\n```\n$0"
+			"```bash-w\n${1:$SELECTION}\n```\n$0"
 		],
 		"description": "bash code block without numbering"
 	},
