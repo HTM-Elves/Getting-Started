@@ -861,8 +861,8 @@ HTML!”</em></strong></p>
 <p>You are right. You won’t be <em>writing</em> any HTML, but you will
 be <em>using</em> HTML, when standard Markdown needs a little help. And
 Markdown needs help in creating container elements, like sections. And
-HTM-Elves is structured to use <code>&lt;section&gt;</code> element for
-each logical section.</p>
+HTM-Elves is structured to use a <code>&lt;section&gt;</code> element
+for each logical section.</p>
 <p>I don’t want to type out chunks of HTML code each time I want a new
 section, or a <code>&lt;details&gt;</code> element or another kind of
 container. Instead I use <a
@@ -1008,51 +1008,86 @@ with HTM-Elves:</p>
     "details": {
         "prefix": "ddd",
         "body": [
-            "&lt;details class=\"${1|alert,challenge,env,feedback,note,pivot,question,tip,tldr,warn|}\"${2: open}&gt;\n&lt;summary&gt;${3:Summary}&lt;/summary&gt;\n${4:$TM_SELECTED_TEXT}\n\n&lt;/details&gt;"
+            "&lt;details class=\"${1|alert,challenge,env,feedback,note,pivot,question,solution,tip,tldr,warn|}\"${2: open}&gt;\n&lt;summary&gt;${3:Summary}&lt;/summary&gt;\n${4:$TM_SELECTED_TEXT}\n\n&lt;/details&gt;"
         ],
         "description": "details element"
     },
     "javascript code block": {
         "prefix": "js",
         "body": [
-            "```javascript\n$1\n```\n$0"
+            "```javascript\n${1:$SELECTION}\n```\n$0"
         ],
         "description": "javascript code block"
     },
     "json code block": {
         "prefix": "json",
         "body": [
-            "```json\n$1\n```\n$0"
+            "```json\n${1:$SELECTION}\n```\n$0"
         ],
         "description": "json code block"
     },
     "html code block": {
         "prefix": "html",
         "body": [
-            "```html\n$1\n```\n$0"
+            "```html\n${1:$SELECTION}\n```\n$0"
         ],
         "description": "html code block"
     },
     "md code block": {
         "prefix": "md",
         "body": [
-            "```md\n$1\n```\n$0"
+            "```md\n${1:$SELECTION}\n```\n$0"
         ],
         "description": "markdown code block"
     },
     "css code block": {
         "prefix": "css",
         "body": [
-            "```css\n$1\n```\n$0"
+            "```css\n${1:$SELECTION}\n```\n$0"
         ],
         "description": "css code block"
     },
     "bash code block": {
         "prefix": "bash",
         "body": [
-            "```bash-#w\n$1\n```\n$0"
+            "```bash-w\n${1:$SELECTION}\n```\n$0"
         ],
         "description": "bash code block without numbering"
+    },
+    "<b>": {
+        "prefix": "&lt;b",
+        "body": [
+            "<b>$SELECTION&lt;/b"
+        ],
+        "description": "create bright block"
+    },
+    "<i>": {
+        "prefix": "&lt;i",
+        "body": [
+            "<i>$SELECTION&lt;/i"
+        ],
+        "description": "create dimmed block"
+    },
+    "</i><b>": {
+        "prefix": "ib",
+        "body": [
+            "</i><b>$SELECTION</b><i>"
+        ],
+        "description": "insert bright block"
+    },
+    "<s>": {
+        "prefix": "&lt;s",
+        "body": [
+            "<s>$SELECTION&lt;/s"
+        ],
+        "description": "create deleted block"
+    },
+    "<u>": {
+        "prefix": "&lt;u",
+        "body": [
+            "<u>$SELECTION&lt;/u"
+        ],
+        "description": "create selection"
     },
     "insert image": {
         "prefix": "img",
