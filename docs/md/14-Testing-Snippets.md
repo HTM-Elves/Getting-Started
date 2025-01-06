@@ -5,6 +5,8 @@
   data-item="Testing Snippets"
 >
   <h2><a href="#testing-snippets">Testing Snippets</a></h2>
+
+If you have got this far, I am assuming that you have [downloaded the `markdown.json`](markdown.json){download=""} and used it to replace the placeholder text provided by VS Code.
   
 Here's how you can test the power of snippets.
 

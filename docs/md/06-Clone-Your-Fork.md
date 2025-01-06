@@ -38,7 +38,7 @@ MyTutorials
     └── public
         ├── filter.js
         ├── media-queries.css
-        ├── nodoc.webp
+        ├── nodoc.svg
         ├── prism
         ├── script.js
         ├── storage.js

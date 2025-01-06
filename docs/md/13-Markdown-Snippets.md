@@ -76,138 +76,18 @@ Now you can install some useful snippets in a special file called `markdown.json
 5. Press Enter.
 6. A file named `markdown.json` will open. It's not exactly a JSON file, because it supports JavaScript-like comments. It's probably just got comments in it and no snippets.
 7. Copy the JSON from the code listing below and use this to replace the current contents of the file.
+   
+<details class="tip" open>
+<summary>Download `markdown.json`</summary>
+You can [download a complete file](markdown.json){download=""} with the Markdown snippets that help me the most, and use its contents to replace the placeholder text in your `markdown.json` file.
+
+</details>
 
 <details class="warn" open>
 <summary>Don't overwrite existing snippets</summary>
 If there are already some Markdown snippets in the file, simply add the snippets from the code listing below, rather than replacing everything.
 
 </details>
-
-Here are the Markdown snippets that I use regularly in connection with HTM-Elves:
-
-```json-w
-{
-	// Place your snippets for markdown here. Each snippet is
-	// defined under a snippet name and has a prefix, body and
-	// description. The prefix is what is used to trigger the 
-	// snippet and the body will be expanded and inserted. Possible
-	// variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and
-	// ${1:label}, ${2:another} for placeholders. Placeholders with
-	// the same ids are connected.
-
-	// For more details, see
-	// https://code.visualstudio.com/docs/editor/userdefinedsnippets
-
-	"dynamic section":{
-		"body": [
-			"<!-- ${1:${TM_FILENAME/(^[0-9 ._-]+)|(\\..{1,4}$)|([a-z0-9]+)|([ _-]+)|(.)/${3}${4:+ }${5}/gi}} -->\n<section\n  id=\"${2:${1/([a-z0-9]+)|([\\s_.-]+)|(.)/${1:/downcase}${2:+-}/gi}}\"\n  aria-labelledby=\"$2\"\n  data-item=\"${3:${1/([\\s_\\.-]+)|('\\w(?=(?:\\s|$)))|(\\w+)/${1:+ }$2${3:/capitalize}/g}}\"\n>\n  <h2><a href=\"#$2\">${4:${3/([_\\.-]+)|('\\w(?=(?:\\s|$)))|(\\w+)/${1:+ }$2${3:/capitalize}/g}}</a></h2>\n  $0\n\n</section>"
-		],
-		"prefix": "sss",
-		"description": "id+data-item+header from file name"
-	},
-	// See Open VS Code Issue: #112362
-	// https://github.com/microsoft/vscode/issues/112362#issuecomment-947556633
-	"section": {
-		"prefix": "section",
-		"body": [
-			"<section\n  id=\"${1:section-id}\"\n  aria-labelledby=\"$1\"\n  data-item=\"${2:Title for Menu}\"\n>\n  <h2><a href=\"#$1\">${3:$2}</a></h2>\n  $0\n</section>"
-		],
-		"description": "Customize id, data-item and header. Add content."
-	},
-	"details": {
-		"prefix": "ddd",
-		"body": [
-			"<details class=\"${1|alert,challenge,env,feedback,note,pivot,question,solution,tip,tldr,warn|}\"${2: open}>\n<summary>${3:Summary}</summary>\n${4:$TM_SELECTED_TEXT}\n\n</details>"
-		],
-		"description": "details element"
-	},
-	"javascript code block": {
-		"prefix": "js",
-		"body": [
-			"```javascript\n${1:$SELECTION}\n```\n$0"
-		],
-		"description": "javascript code block"
-	},
-	"json code block": {
-		"prefix": "json",
-		"body": [
-			"```json\n${1:$SELECTION}\n```\n$0"
-		],
-		"description": "json code block"
-	},
-	"html code block": {
-		"prefix": "html",
-		"body": [
-			"```html\n${1:$SELECTION}\n```\n$0"
-		],
-		"description": "html code block"
-	},
-	"md code block": {
-		"prefix": "md",
-		"body": [
-			"```md\n${1:$SELECTION}\n```\n$0"
-		],
-		"description": "markdown code block"
-	},
-	"css code block": {
-		"prefix": "css",
-		"body": [
-			"```css\n${1:$SELECTION}\n```\n$0"
-		],
-		"description": "css code block"
-	},
-	"bash code block": {
-		"prefix": "bash",
-		"body": [
-			"```bash-w\n${1:$SELECTION}\n```\n$0"
-		],
-		"description": "bash code block without numbering"
-	},
-	"<b>": {
-		"prefix": "<b",
-		"body": [
-			"<b>$SELECTION</b"
-		],
-		"description": "create bright block"
-	},
-	"<i>": {
-		"prefix": "<i",
-		"body": [
-			"<i>$SELECTION</i"
-		],
-		"description": "create dimmed block"
-	},
-	"</i><b>": {
-		"prefix": "ib",
-		"body": [
-			"</i><b>$SELECTION</b><i>"
-		],
-		"description": "insert bright block"
-	},
-	"<s>": {
-		"prefix": "<s",
-		"body": [
-			"<s>$SELECTION</s"
-		],
-		"description": "create deleted block"
-	},
-	"<u>": {
-		"prefix": "<u",
-		"body": [
-			"<u>$SELECTION</u"
-		],
-		"description": "create selection"
-	},
-	"insert image": {
-		"prefix": "img",
-		"body": [
-			"![${2:Caption}](images${1:/filename})"
-		],
-		"description": "insert image"
-	}
-}
-```
 
 <details class="pivot" open>
 <summary>All set!</summary>
