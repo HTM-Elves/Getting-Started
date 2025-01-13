@@ -76,6 +76,13 @@
 		],
 		"description": "bash code block without numbering"
 	},
+	"text code block": {
+		"prefix": "tex",
+		"body": [
+			"```tex-w\n${1:$SELECTION}\n```\n$0"
+		],
+		"description": "text block without numbering"
+	},
 	"<b>": {
 		"prefix": "<b",
 		"body": [
