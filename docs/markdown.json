@@ -27,10 +27,10 @@
 		],
 		"description": "Customize id, data-item and header. Add content."
 	},
-	"details": {
+  "details": {
 		"prefix": "ddd",
 		"body": [
-			"<details class=\"${1|alert,challenge,env,feedback,note,pivot,question,solution,tip,tldr,warn|}\"${2: open}>\n<summary>${3:Solution}</summary>\n${4:$TM_SELECTED_TEXT}\n\n</details>"
+			"<details class=\"${1|alert,challenge,env,feedback,hint,note,pivot,question,sandbox,solution,story,tip,tldr,trouble,warn|}\"${2: open}>\n<summary>${3:Solution}</summary>\n${4:$TM_SELECTED_TEXT}\n\n</details>"
 		],
 		"description": "details element"
 	},
