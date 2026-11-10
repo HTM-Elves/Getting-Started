@@ -11,7 +11,7 @@ To create a GitHub Organization:
 
 1. Log in to [GitHub](https://github.com/)
 2. Click on your Profile icon in the top right corner
-3. In the drop-down menu that opens, select [Your Organazations](https://github.com/settings/organizations)
+3. In the drop-down menu that opens, select [Your Organizations](https://github.com/settings/organizations)
    
 ![Select your organizations](images/YourOrganizations.webp)
 
